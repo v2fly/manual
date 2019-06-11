@@ -5,6 +5,9 @@ jobs:
   pool:
     vmImage: 'ubuntu-16.04'
 
+  variables:
+    - group: GithubToken
+    
   steps:
   - checkout: self
     clean: true
