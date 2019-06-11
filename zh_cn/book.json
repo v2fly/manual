@@ -17,7 +17,7 @@
   ],
   "pluginsConfig": {
     "ga": {
-      "token": "UA-73620536-1"
+      "token": ""
     },
     "prism": {
       "css": [

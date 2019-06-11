@@ -20,7 +20,7 @@ Project V 是一个工具集合，它可以帮助你打造专属的基础通信�
 
 ## 赞助商
 
-[![v2net](resources/v2net.png)](http://v2net.org)
+正在建设中
 
 {% hint style='info' %}
 本站点由 GitBook 生成，托管于 GitHub。如需修改本站的内容，请向[这个 Repo](https://github.com/v2ray/manual) 提交 Pull Request。
