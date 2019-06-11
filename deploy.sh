@@ -11,7 +11,7 @@ function build_dir {
   gitbook init
   gitbook install
   gitbook build
-  popd  
+  popd
 }
 
 sudo npm install -g gitbook-cli
@@ -25,7 +25,7 @@ build_dir vi
 
 TARGET_DIR=_v2ray_com
 
-git clone "https://github.com/v2ray/v2ray.github.io.git" ${TARGET_DIR}
+git clone "https://github.com/v2fly/v2fly.github.io.git" ${TARGET_DIR}
 
 rm -rf ${TARGET_DIR}/*
 cp -r ./zh_cn/_book/* ${TARGET_DIR}/
@@ -45,10 +45,10 @@ cp robots.txt ${TARGET_DIR}/
 cp -r ./resources/* ${TARGET_DIR}/resources/
 
 pushd ${TARGET_DIR}
-git config user.name "V2Ray Auto Build"
-git config user.email "admin@v2ray.com"
+git config user.name "Page Uploader Bot"
+git config user.email "ShellBOT+V2FlyPageUploader@unial.org"
 
 git add -A
 git commit -m 'update'
-git push "https://${GITHUB_TOKEN}@github.com/v2ray/v2ray.github.io.git" master
+git push "https://${GITHUB_TOKEN}@github.com/v2fly/v2fly.github.io.git" master
 popd

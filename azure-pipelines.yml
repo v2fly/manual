@@ -13,7 +13,6 @@ jobs:
       ls -al
       ./deploy.sh
     env:
-      GITHUB_TOKEN: '$(github.token)'
+      GITHUB_TOKEN: '$(Github_PagePushToken)'
     workingDirectory: '$(Build.SourcesDirectory)'
     displayName: 'Build'
-
