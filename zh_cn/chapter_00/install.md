@@ -93,10 +93,9 @@ go.sh 支持如下参数，可在手动安装时根据实际情况调整：
 
 ## Docker {#docker}
 
-V2Ray 提供了两个预编译的 Docker image：
+V2Ray 提供了预编译的 Docker image：
 
-* [v2ray/official](https://hub.docker.com/r/v2ray/official/): 包含最新发布的版本，每周跟随新版本更新；
-* [v2ray/dev](https://hub.docker.com/r/v2ray/dev/): 包含由最新的代码编译而成的程序文件，随代码库更新；
+* [v2fly/v2ray-core](https://hub.docker.com/r/v2fly/v2fly-core): 其中`latest`标签会跟随[v2fly](https://github.com/v2fly/docker-fly)编译仓库提交保持最新，而各个版本以tag方式发布，比如`4.21.3`。
 
 两个 image 的文件结构相同：
 
