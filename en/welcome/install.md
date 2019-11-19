@@ -89,9 +89,13 @@ Examples:
 
 ## Docker {#docker}
 
-V2Ray provides 2 docker images:
+V2Ray provides docker image which has the same structure as the Linux installation.
 
-* [v2ray/official](https://hub.docker.com/r/v2ray/official/): Contains official releases.
-* [v2ray/dev](https://hub.docker.com/r/v2ray/dev/): Contains latest code.
+* [v2fly/v2ray-core](https://hub.docker.com/r/v2fly/v2fly-core): 其中`latest`标签会跟随[v2fly](https://github.com/v2fly/docker-fly)编译仓库提交保持最新，而各个版本以tag方式发布，比如`4.21.3`。
 
-The 2 images has the same structure as the Linux installation.
+* /etc/v2ray/config.json: config file
+* /usr/bin/v2ray/v2ray: V2Ray main program
+* /usr/bin/v2ray/v2ctl: V2Ray helper program
+* /usr/bin/v2ray/geoip.dat: IP data file
+* /usr/bin/v2ray/geosite.dat: domain data file
+

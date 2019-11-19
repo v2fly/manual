@@ -97,7 +97,7 @@ V2Ray 提供了预编译的 Docker image：
 
 * [v2fly/v2ray-core](https://hub.docker.com/r/v2fly/v2fly-core): 其中`latest`标签会跟随[v2fly](https://github.com/v2fly/docker-fly)编译仓库提交保持最新，而各个版本以tag方式发布，比如`4.21.3`。
 
-两个 image 的文件结构相同：
+docker image 的文件结构跟Linux下安装的路径相同：
 
 * /etc/v2ray/config.json: 配置文件
 * /usr/bin/v2ray/v2ray: V2Ray 主程序
