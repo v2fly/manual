@@ -15,10 +15,6 @@ V2RayW 是一个基于 V2Ray 内核的 Windows 客户端。用户可以通过界
 
 V2RayN 是一个基于 V2Ray 内核的 Windows 客户端。下载：[GitHub](https://github.com/2dust/v2rayN)
 
-> V2RayS <img width="20" src="/resources/win.svg">
-
-下载：[GitHub](https://github.com/Shinlor/V2RayS)
-
 > Clash for Windows <img width="20" src="/resources/win.svg">
 
 下载：[GitHub](https://github.com/Fndroid/clash_for_windows_pkg)
@@ -29,7 +25,7 @@ V2RayX 是一个基于 V2Ray 内核的 Mac OS X 客户端。用户可以通过�
 
 > V2RayU <img width="20" src="/resources/apple.svg">
 
-下载：[GitHub](https://github.com/yanue/V2rayU)
+V2rayU,基于v2ray核心的mac版客户端,界面友好,使用swift4.2编写,支持vmess,shadowsocks,socks5等服务协议,支持订阅, 支持二维码,剪贴板导入,手动配置,二维码分享等。下载：[GitHub](https://github.com/yanue/V2rayU)
 
 > V2RayC <img width="20" src="/resources/apple.svg">
 
@@ -39,13 +35,27 @@ V2RayX 是一个基于 V2Ray 内核的 Mac OS X 客户端。用户可以通过�
 
 下载：[GitHub](https://github.com/yichengchen/clashX)
 
-> Kitsunebi <img width="20" src="/resources/ios.svg">
+> Qv2ray <img width="20" src="/resources/win.svg"> <img width="20" src="/resources/apple.svg"> <img width="20" src="/resources/linux.svg">
 
-Kitsunebi 是一个基于 V2Ray 核心的 iOS 应用。它可以创建基于 VMess 或者 Shadowsocks 的 VPN 连接。Kitsunebi 支持导入和导出与 V2Ray 兼容的 JSON 配置。
+Qv2ray：使用 Qt 编写的 v2ray 跨平台 GUI （MacOS, Windows, Linux）支持连接导入和编辑，中英文切换
+
+下载：[GitHub](https://github.com/lhy0403/Qv2ray)
+
+官网：[https://lhy0403.github.io/Qv2ray](https://lhy0403.github.io/Qv2ray)
+
+> Mellow <img width="20" src="/resources/win.svg"> <img width="20" src="/resources/apple.svg"> <img width="20" src="/resources/linux.svg">
+
+Mellow 是一个基于规则的全局透明代理工具，可以运行在 Windows、macOS 和 Linux 上，也可以配置成路由器透明代理或代理网关，支持 SOCKS、HTTP、Shadowsocks、VMess 等多种代理协议。
+
+Download: [Github](https://github.com/mellow-io/mellow)
+
+> Kitsunebi <img width="20" src="/resources/ios.svg"> <img width="20" src="/resources/android.svg">
+
+Kitsunebi 是一个基于 V2Ray 核心的移动平台应用 (iOS, Android)。它可以创建基于 VMess 或者 Shadowsocks 的 VPN 连接。Kitsunebi 支持导入和导出与 V2Ray 兼容的 JSON 配置。
 
 由于使用 V2Ray 核心，Kitsunebi 几乎支持 V2Ray 的所有功能，比如 Mux 和 mKCP。
 
-下载：[iTunes](https://itunes.apple.com/us/app/kitsunebi-proxy-utility/id1446584073?mt=8)
+下载：[iTunes](https://itunes.apple.com/us/app/kitsunebi-proxy-utility/id1446584073?mt=8) | [Play Store](https://play.google.com/store/apps/details?id=fun.kitsunebi.kitsunebi4android&hl=en_US)
 
 > i2Ray <img width="20" src="/resources/ios.svg">
 

@@ -5,11 +5,26 @@ refen: configuration/dns
 
 # DNS 服务器
 
-V2Ray 内置了一个 DNS 服务器，可以将 DNS 查询根据路由设置转发到不同的远程服务器中。由此 DNS 服务器所发出的 DNS 查询请求，会自动根据路由配置进行转发，无需额外配置。
+V2Ray 内置了一个 DNS 服务器，其有两大主要用途：根据域名的解析IP匹配路由规则，以及像传统的DNS功能，解析目标地址进行连接。
+
+由此 DNS 服务器所发出的 DNS 查询请求，会自动根据路由配置进行转发，无需额外配置。
 
 {% hint style='info' %}
 由于 DNS 协议的复杂性，V2Ray 只支持最基本的 IP 查询（A 和 AAAA 记录）。推荐使用本机 DNS 配合一个额外的 DNS 服务器来做 DNS 查询，如 [CoreDNS](https://coredns.io/)，以使用完整的 DNS 功能。
 {% endhint %}
+
+{% hint style='info' %}
+注意：在`freedom`协议的`outbound`中，`domainStrategy`默认值为`AsIs`，不会使用本DNS服务器进行目的地址解析，如果需要使用应配置为`UseIP`。
+{% endhint %}
+
+## DNS 处理流程
+
+当某个 DNS 服务器指定的域名列表匹配了当前要查询的域名，V2Ray 会优先使用这个 DNS 服务器进行查询，否则按从上往下的顺序进行查询，同时只返回匹配 expectIPs 的 IP 列表。
+
+
+DNS服务器的处理流程示意图如下：
+
+![](/resources/dns_flowchart.svg)
 
 ## DnsObject
 
@@ -46,10 +61,10 @@ V2Ray 内置了一个 DNS 服务器，可以将 DNS 查询根据路由设置转�
 
 域名的格式有以下几种形式：
 
-* 纯字符串: 当此字符串匹配目标域名中任意部分，该规则生效。当此域名完整匹配目标域名时，该规则生效。例如"v2ray.com"匹配"v2ray.com"但不匹配"www.v2ray.com"。
+* 纯字符串: 当此域名完整匹配目标域名时，该规则生效。例如"v2ray.com"匹配"v2ray.com"但不匹配"www.v2ray.com"。
 * 正则表达式: 由`"regexp:"`开始，余下部分是一个正则表达式。当此正则表达式匹配目标域名时，该规则生效。例如"regexp:\\\\.goo.*\\\\.com$"匹配"www.google.com"、"fonts.googleapis.com"，但不匹配"google.com"。
 * 子域名 (推荐): 由`"domain:"`开始，余下部分是一个域名。当此域名是目标域名或其子域名时，该规则生效。例如"domain:v2ray.com"匹配"www.v2ray.com"、"v2ray.com"，但不匹配"xv2ray.com"。
-* 子串: 当此字符串匹配目标域名中任意部分，该规则生效。比如"keyword:sina.com"可以匹配"sina.com"、"sina.com.cn"和"www.sina.com"，但不匹配"sina.cn"。
+* 子串: 由`"keyword:"`开始，余下部分是一个字符串。当此字符串匹配目标域名中任意部分，该规则生效。比如"keyword:sina.com"可以匹配"sina.com"、"sina.com.cn"和"www.sina.com"，但不匹配"sina.cn"。
 * 预定义域名列表：由`"geosite:"`开头，余下部分是一个名称，如`geosite:google`或者`geosite:cn`。名称及域名列表参考[预定义域名列表](03_routing.md#dlc)。
 
 > `servers`: \[string | [ServerObject](#serverobject) \]
@@ -60,14 +75,16 @@ V2Ray 内置了一个 DNS 服务器，可以将 DNS 查询根据路由设置转�
 
 当值为`"localhost"`时，表示使用本机预设的 DNS 配置。
 
-当值以`"DOH_"`开始时，如`"DOH_1.1.1.1"`，V2Ray 会使用DNS OVER HTTPS (rfc8484, 简称DOH)向 `https://1.1.1.1/dns-query` 进行查询。注意有些服务商要求使用域名访问DOH服务，应写成`"DOH_dns.google"`。 (4.22.0+)
+当值是`"https://host:port/dns-query"`的形式，如`"https://dns.google/dns-query"`，V2Ray 会使用`DNS over HTTPS` (RFC8484, 简称DOH) 进行查询。有些服务商拥有IP别名的证书，可以直接写IP形式，比如`https://1.1.1.1/dns-query`。也可使用非标准端口和路径，如`"https://a.b.c.d:8443/my-dns-query"` (4.22.0+)
 
-当值以`"DOHL_"`开始时，如`"DOHL_1.1.1.1"`，V2Ray 会使用 `DOH本地模式` 进行查询，即DOH请求不会经过Routing/Outbound等组件，直接对外请求，以降低耗时。一般适合在服务端使用。 (4.22.0+)
+当值是`"https+local://host:port/dns-query"`的形式，如`"https+local://dns.google/dns-query"`，V2Ray 会使用 `DOH本地模式` 进行查询，即DOH请求不会经过Routing/Outbound等组件，直接对外请求，以降低耗时。一般适合在服务端使用。也可使用非标端口和路径。(4.22.0+)
 
 {% hint style='info' %}
+
 当使用 `localhost` 时，本机的 DNS 请求不受 V2Ray 控制，需要额外的配置才可以使 DNS 请求由 V2Ray 转发。
 
 不同规则初始化得到的DNS客户端会在V2Ray启动日志中以`info`级别体现，比如`local DOH` `remote DOH` `udp`等模式。（4.22.0+）
+
 {% endhint %}
 
 > `clientIp`: string
@@ -95,11 +112,11 @@ V2Ray 内置了一个 DNS 服务器，可以将 DNS 查询根据路由设置转�
 
 > `address`: address
 
-DNS 服务器地址，如`"8.8.8.8"`。对于普通DNS IP地址只支持 UDP 协议的 DNS 服务器，若地址以"DOH_"或者"DOHL_"开头，则使用DOH模式，规则同字符串模式用法。
+DNS 服务器地址，如`"8.8.8.8"`。对于普通DNS IP地址只支持 UDP 协议的 DNS 服务器，若地址是以`"https://"`或`"https+local://"`开头的URL形式，则使用DOH模式，规则同字符串模式的DOH配置。
 
 > `port`: number
 
-DNS 服务器端口，如`53`。此项缺省时默认为`53`，当使用DOH模式是默认为`443` (4.22.0+)。
+DNS 服务器端口，如`53`。此项缺省时默认为`53`。当使用DOH模式该项无效，非标端口应在URL中指定。
 
 > `domains`: \[string\]
 
@@ -113,42 +130,4 @@ DNS 服务器端口，如`53`。此项缺省时默认为`53`，当使用DOH模�
 
 如果未配置此项，会原样返回 IP 地址。
 
-注意：若要使 DNS 服务生效，需要配置路由功能中的 `domainStrategy`。
 
-### DNS 处理流程
-
-当某个 DNS 服务器指定的域名列表匹配了当前要查询的域名，V2Ray 会优先使用这个 DNS 服务器进行查询，否则按从上往下的顺序进行查询，同时只返回匹配 expectIPs 的 IP 列表。
-
-处理流程示意图如下：
-
-![](/resources/dns_flowchart.svg)
-
-### 最佳实践
-
-对国内翻墙的一般需求，为达到 DNS 就近访问效果，可以使用如下 DNS 配置:
-
-```json
-{
-  "servers": [
-    {
-      "address": "119.29.29.29",
-      "port": 53,
-      "domains": [
-        "geosite:cn"
-      ],
-      "expectIPs": [
-        "geoip:cn"
-      ]
-    },
-    {
-      "address": "8.8.8.8",
-      "port": 53,
-      "domains": [
-        "geosite:geolocation-!cn",
-        "geosite:speedtest",
-        "ext:h2y.dat:gfw"
-      ]
-    }
-  ]
-}
-```

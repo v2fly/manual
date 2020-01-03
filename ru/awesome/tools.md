@@ -15,10 +15,6 @@ Download: [Github](https://github.com/Cenmrev/V2RayW)
 
 Download: [Github](https://github.com/2dust/v2rayN)
 
-> V2RayS <img width="20" src="/resources/win.svg" />
-
-Download: [Github](https://github.com/Shinlor/V2RayS)
-
 > Clash for Windows <img width="20" src="/resources/win.svg" />
 
 Download: [Github](https://github.com/Fndroid/clash_for_windows_pkg)
@@ -38,6 +34,20 @@ Download: [Github](https://github.com/gssdromen/V2RayC)
 > ClashX <img width="20" src="/resources/apple.svg" />
 
 Download: [Github](https://github.com/yichengchen/clashX)
+
+> Qv2ray <img width="20" src="/resources/win.svg" /> <img width="20" src="/resources/apple.svg" /> <img width="20" src="/resources/linux.svg" />
+
+Qv2ray: v2ray Cross-Platform GUI written in Qt, supports multi-language, connection edit and auto-check updates
+
+Download: [GitHub](https://github.com/lhy0403/Qv2ray)
+
+Website (Chinese): <https://lhy0403.github.io/Qv2ray>
+
+> Mellow <img width="20" src="/resources/win.svg" /> <img width="20" src="/resources/apple.svg" /> <img width="20" src="/resources/linux.svg" />
+
+Mellow is a rule-based global transparent proxy client for Windows, macOS and Linux.
+
+Download: [Github](https://github.com/mellow-io/mellow)
 
 > Kitsunebi <img width="20" src="/resources/ios.svg" />
 

@@ -7,11 +7,9 @@ V2Ray 使用 [Golang](https://golang.org/) 作为主要编程语言。团队发�
 * 安装 Golang: [golang.org/doc/install](https://golang.org/doc/install)
 * 安装 Bazel: [docs.bazel.build/install](https://docs.bazel.build/versions/master/install.html) （手工/脚本编译方式无需）
 
-## 推荐环境 {#recommendedenv}
+## 推荐环境
 
-推荐使用[Ubuntu 18.04](https://releases.ubuntu.com/18.04)发行版，并[使用snap安装go环境](https://snapcraft.io/go) 。snap可自动在后台维护golang环境，保持与上游环境一致更新。 
-
-Win10 WSL1 下的ubuntu亦可用来作为编译环境，但是snap不可用，需自行解决[golang环境](https://golang.org/dl/)。
+这里推荐使用[Ubuntu 18.04](https://releases.ubuntu.com/18.04)发行版，并[使用snap安装go环境](https://snapcraft.io/go) 。snap可自动在后台维护golang环境，保持与上游环境一致更新。
 
 ## 拉取 V2Ray 源代码 {#pull}
 
@@ -19,16 +17,14 @@ Win10 WSL1 下的ubuntu亦可用来作为编译环境，但是snap不可用，�
 go get -u v2ray.com/core/...
 ```
 
-构建脚本内包括了拉取源码的动作，但是重复拉取也不影响。
-
-注意在无法正常访问google的网络环境，这个命令无法完成，需要先配置好一个本地的HTTP代理服务器，并配置本地环境变量：
+注意在无法正常访问google的网络环境，这个命令无法完成，需要先配置好一个本地的HTTP代理服务器，并配置本地环境变量，比如
 
 ```bash
 export http_proxy=http://localhost:1080
 export https_proxy=http://localhost:1080
 ```
 
-Go将会使用本地的1080端口的HTTP代理进行源码拉取。
+go将会使用本地的1080端口的HTTP代理进行源码拉取。
 
 ## 手工构建 {#manualbuild}
 
@@ -42,19 +38,18 @@ env CGO_ENABLED=0 go build -o $HOME/v2ctl -tags confonly -ldflags "-s -w"
 
 以上命令在当前用户的`$HOME`目录下生成刚新构建的`v2ray` 、`v2ctl`执行文件，即可正常使用。
 
-构建其他CPU架构、其他系统（windows/macos）的过程属于golang的交叉编译流程，主要是控制`GOOS`/`GOARCH`两个变量，这里不再重复，请自行查阅golang相关文档。
+构建其他CPU架构、其他系统（windows/macos）的过程属于golang的交叉编译流程，主要是控制`GOOS`/`GOARCH`两个变量，这里不再重复，查阅golang相关文档。
 
 ## 脚本构建 {#scriptbuild}
 
 以上手工构建的只是v2ray可执行程序本身，发行包zip内还包含了地址库等其他文件。使用打包脚本可方便地制作出的发布包。
 
 ```bash
-wget https://raw.githubusercontent.com/v2ray/v2ray-core/master/release/user-package.sh
+wget https://raw.githubusercontent.com/v2ray/v2ray-core/master/release/user-package.sh) 
 chmod 755 user-package.sh
-./user-package.sh
 ```
 
-以上脚本执行即可在当前目录生成类似`v2ray-custom-linux-amd64-20190710-000000.zip`的文件，即为发布包。
+以上脚本直接执行即可在当前目录生成类似`v2ray-custom-linux-amd64-20190710-000000.zip`的文件，即为发布包。
 
 这个脚本可用一些参数编译出自行定制的发布包：
 
@@ -62,19 +57,20 @@ chmod 755 user-package.sh
 * `darwin` 构建darwin（MacOS）版本的发布包
 * `tgz` 最后打包成`tar.gz`而不是zip格式
 * `386` 构建成32位程序
-* `arm` 构建适合arm架构CPU的程序，可选`arm` `arm64`
+* `arm` 构建适合arm架构CPU的程序，arm arm64
 * `mips` 同上，参照golang的交叉编译文档
 * `nodat` 不要包含地址库`geoip.dat` `geosite.dat`， 可以减小发布包的大小
 * `noconf` 不要包括范例json, systemd/systemv等配置文件
-* `nosource` 不要执行`go get ...`，当已经拉取过v2ray源码，需要本地修改了v2ray源码情况下不需要重新源码拉取
+* `nosource` 不要执行`go get ...`，避免已经拉取到本地的v2ray源码被覆盖
 
-以上参数没有次序要求，按需传给脚本，比如构建一个适合windows 32位，不带地址库，不带样例配置的发布包：
+以上参数没有次序要求，只需要按需传给脚本，比如构建一个适合windows 32位，不带地址库，不带样例配置的发布包：
 
 ```bash
 ./user-package.sh windows 386 nodat noconf
 ```
 
 脚本编译的v2ray，其启动信息会变成用户编译的时间，以做区分：
+
 ```text
 V2Ray 4.20.0 (user) 20190710-010000
 A unified platform for anti-censorship.
@@ -86,8 +82,6 @@ A unified platform for anti-censorship.
 CODENAME="user"
 BUILDNAME=$NOW
 ```
-
-如果脚本执行期间长时间没有输出，多是因为网络问题，参考 #拉取源码 一节中配置HTTP代理的方式重新运行即可。
 
 ## 自动构建 {#build}
 
