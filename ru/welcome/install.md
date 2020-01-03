@@ -22,7 +22,7 @@ V2Ray доступен на следующих платформах:
 Готовые пакеты можно найти здесь:
 
 1. Github Release: [github.com/v2ray/v2ray-core](https://github.com/v2ray/v2ray-core/releases)
-2. Redistribution: [github.com/v2ray/dist](https://github.com/v2ray/dist)
+2. Зеркало: [github.com/v2ray/dist](https://github.com/v2ray/dist)
 3. Homebrew: [github.com/v2ray/homebrew-v2ray](https://github.com/v2ray/homebrew-v2ray)
 4. Arch Linux: [packages/community/x86_64/v2ray/](https://www.archlinux.org/packages/community/x86_64/v2ray/)
 5. Snapcraft: [snapcraft.io/v2ray-core](https://snapcraft.io/v2ray-core)
@@ -49,7 +49,7 @@ V2Ray доступен на следующих платформах:
 Выполните следующую команду для установки V2Ray. Если yum или apt доступны, скрипт установит unzip и daemon / systemd. Они необходимы для запуска V2Ray в качестве службы. Вам необходимо установить их вручную, если ваша система Linux не поддерживает yum или apt.
 
 ```bash
-bash <(curl -L -s https://install.direct/go.sh)
+curl -Ls https://install.direct/go.sh | sudo bash
 ```
 
 Этот сценарий устанавливает следующие файлы.
