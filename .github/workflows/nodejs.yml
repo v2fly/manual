@@ -44,28 +44,31 @@ jobs:
       run: |
         TARGET_DIR=_v2ray_com
         git clone "https://github.com/v2fly/v2fly-github-io.git" ${TARGET_DIR}
-        rm -rf ${TARGET_DIR}/*
-        cp -rv ./zh_cn/_book/* ${TARGET_DIR}/
-        mkdir ${TARGET_DIR}/en/
-        cp -rv ./en/_book/* ${TARGET_DIR}/en/
-        mkdir ${TARGET_DIR}/ru/
-        cp -rv ./ru/_book/* ${TARGET_DIR}/ru/
-        mkdir ${TARGET_DIR}/ko/
-        cp -rv ./ko/_book/* ${TARGET_DIR}/ko/
-        mkdir ${TARGET_DIR}/fa/
-        cp -rv ./fa/_book/* ${TARGET_DIR}/fa/
-        mkdir ${TARGET_DIR}/vi/
-        cp -rv ./vi/_book/* ${TARGET_DIR}/vi/
-        cp -rv ./_dev/* ${TARGET_DIR}/
-        cp -v CNAME ${TARGET_DIR}/
-        cp -v robots.txt ${TARGET_DIR}/
-        cp -rv ./resources/* ${TARGET_DIR}/resources/
 
         pushd ${TARGET_DIR}
         git config user.name "Bot V2FlyContrib"
         git config user.email "50686256+V2FlyContrib@users.noreply.github.com"
-
         git reset --hard $(git rev-list --max-parents=0 --abbrev-commit HEAD)
+        popd
+
+        rm -rf ${TARGET_DIR}/*
+        cp -r ./zh_cn/_book/* ${TARGET_DIR}/
+        mkdir ${TARGET_DIR}/en/
+        cp -r ./en/_book/* ${TARGET_DIR}/en/
+        mkdir ${TARGET_DIR}/ru/
+        cp -r ./ru/_book/* ${TARGET_DIR}/ru/
+        mkdir ${TARGET_DIR}/ko/
+        cp -r ./ko/_book/* ${TARGET_DIR}/ko/
+        mkdir ${TARGET_DIR}/fa/
+        cp -r ./fa/_book/* ${TARGET_DIR}/fa/
+        mkdir ${TARGET_DIR}/vi/
+        cp -r ./vi/_book/* ${TARGET_DIR}/vi/
+        cp -r ./_dev/* ${TARGET_DIR}/
+        cp -v CNAME ${TARGET_DIR}/
+        cp -v robots.txt ${TARGET_DIR}/
+        cp -r ./resources/* ${TARGET_DIR}/resources/
+
+        pushd ${TARGET_DIR}
         git add -A
         git commit -m 'update'
         git push -f "https://${PUBUSER}:${PUBTOKEN}@github.com/v2fly/v2fly-github-io.git" master
