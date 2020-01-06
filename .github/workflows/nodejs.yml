@@ -65,6 +65,7 @@ jobs:
         git config user.name "Bot V2FlyContrib"
         git config user.email "50686256+V2FlyContrib@users.noreply.github.com"
 
+        git reset --hard $(git rev-list --max-parents=0 --abbrev-commit HEAD)
         git add -A
         git commit -m 'update'
-        git push "https://${PUBUSER}:${PUBTOKEN}@github.com/v2fly/v2fly-github-io.git" master
+        git push -f "https://${PUBUSER}:${PUBTOKEN}@github.com/v2fly/v2fly-github-io.git" master
