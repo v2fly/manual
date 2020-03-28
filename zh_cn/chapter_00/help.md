@@ -54,7 +54,7 @@ Project V 的所有讨论组都不可以发布 18 禁、政治相关、仇恨言
 
 如果你需要发送加密信息，可以搜索`love@v2ray.com`相关联的 PGP 公钥，或者从下面的文本导入。
 
-```plain
+```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: GPGTools - https://gpgtools.org
 

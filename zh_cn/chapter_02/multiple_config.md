@@ -30,19 +30,19 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 
 命令行的`-config`可以多次指定。（也可以简写为`-c`，完全等效。）
 
-```plain
+```
 ./v2ray -config base.json -config cf1.json -c cf2.json -c cf3.json
 ```
 
 或者用`-confdir`参数指定一个目录，程序会按文件名顺序读取目录内的`.json`文件。
 
-```plain
+```
 ./v2ray -confdir /etc/v2ray/confs
 ```
 
 也可组合使用。（注意，目录内的配置级别作用在`-config`参数后，不管`-confdir`参数的位置）
 
-```plain
+```
 ./v2ray -c cf1.json -c cf2.json -confdir /etc/v2ray/confs 
 ```
 
