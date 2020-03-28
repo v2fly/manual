@@ -13,12 +13,19 @@ jobs:
       with:
         node-version: 12.x
 
-      
-    - name: npm install gitbook
+    - name: Install lint-md-cli
+      run: |
+        npm install -g lint-md-cli
+
+    - name: Fix Chinese Copywriting
+      run: |
+        for MARKDOWN in "$(find zh_cn/ -name "*.md")"; do lint-md "$MARKDOWN" --fix; done
+
+    - name: Install gitbook-cli
       run: |
         npm install -g gitbook-cli
 
-    - name: build Gitbook
+    - name: Build GitBook
       run: |
         build_dir() {
           DIR="$1"
@@ -37,7 +44,7 @@ jobs:
         build_dir fa
         build_dir vi
 
-    - name: Gitbook Publish
+    - name: GitBook Publish
       env:
         PUBUSER: ${{ secrets.PUBLISH_USER }}
         PUBTOKEN: ${{ secrets.PUBLISH_TOKEN }}
