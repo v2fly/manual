@@ -19,6 +19,11 @@ jobs:
 
     - name: Fix Chinese Copywriting
       run: |
+        echo '{' > .lintmdrc
+        echo '    "rules": {' >> .lintmdrc
+        echo '        "no-long-code": 0' >> .lintmdrc
+        echo '    }' >> .lintmdrc
+        echo '}' >> .lintmdrc
         for MARKDOWN in $(find zh_cn/ -name "*.md"); do lint-md $MARKDOWN; done
 
     - name: Install gitbook-cli
