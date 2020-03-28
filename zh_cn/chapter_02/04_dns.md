@@ -5,7 +5,7 @@ refen: configuration/dns
 
 # DNS 服务器
 
-V2Ray 内置了一个 DNS 服务器，其有两大主要用途：根据域名的解析IP匹配路由规则，以及像传统的DNS功能，解析目标地址进行连接。
+V2Ray 内置了一个 DNS 服务器，其有两大主要用途：根据域名的解析 IP 匹配路由规则，以及像传统的 DNS 功能，解析目标地址进行连接。
 
 由此 DNS 服务器所发出的 DNS 查询请求，会自动根据路由配置进行转发，无需额外配置。
 
@@ -14,7 +14,7 @@ V2Ray 内置了一个 DNS 服务器，其有两大主要用途：根据域名的
 {% endhint %}
 
 {% hint style='info' %}
-注意：在`freedom`协议的`outbound`中，`domainStrategy`默认值为`AsIs`，不会使用本DNS服务器进行目的地址解析，如果需要使用应配置为`UseIP`。
+注意：在`freedom`协议的`outbound`中，`domainStrategy`默认值为`AsIs`，不会使用本 DNS 服务器进行目的地址解析，如果需要使用应配置为`UseIP`。
 {% endhint %}
 
 ## DNS 处理流程
@@ -22,7 +22,7 @@ V2Ray 内置了一个 DNS 服务器，其有两大主要用途：根据域名的
 当某个 DNS 服务器指定的域名列表匹配了当前要查询的域名，V2Ray 会优先使用这个 DNS 服务器进行查询，否则按从上往下的顺序进行查询，同时只返回匹配 expectIPs 的 IP 列表。
 
 
-DNS服务器的处理流程示意图如下：
+DNS 服务器的处理流程示意图如下：
 
 ![](/resources/dns_flowchart.svg)
 
@@ -69,21 +69,21 @@ DNS服务器的处理流程示意图如下：
 
 > `servers`: \[string | [ServerObject](#serverobject) \]
 
-一个 DNS 服务器列表，支持的类型有两种：DNS地址（字符串形式）和[ServerObject](#serverobject) 。
+一个 DNS 服务器列表，支持的类型有两种：DNS 地址（字符串形式）和[ServerObject](#serverobject) 。
 
 当它的值是一个 DNS IP 地址时，如`"8.8.8.8"`，V2Ray 会使用此地址的 53 端口进行 DNS 查询。
 
 当值为`"localhost"`时，表示使用本机预设的 DNS 配置。
 
-当值是`"https://host:port/dns-query"`的形式，如`"https://dns.google/dns-query"`，V2Ray 会使用`DNS over HTTPS` (RFC8484, 简称DOH) 进行查询。有些服务商拥有IP别名的证书，可以直接写IP形式，比如`https://1.1.1.1/dns-query`。也可使用非标准端口和路径，如`"https://a.b.c.d:8443/my-dns-query"` (4.22.0+)
+当值是`"https://host:port/dns-query"`的形式，如`"https://dns.google/dns-query"`，V2Ray 会使用`DNS over HTTPS` (RFC8484, 简称 DOH) 进行查询。有些服务商拥有 IP 别名的证书，可以直接写 IP 形式，比如`https://1.1.1.1/dns-query`。也可使用非标准端口和路径，如`"https://a.b.c.d:8443/my-dns-query"` (4.22.0+)
 
-当值是`"https+local://host:port/dns-query"`的形式，如`"https+local://dns.google/dns-query"`，V2Ray 会使用 `DOH本地模式` 进行查询，即DOH请求不会经过Routing/Outbound等组件，直接对外请求，以降低耗时。一般适合在服务端使用。也可使用非标端口和路径。(4.22.0+)
+当值是`"https+local://host:port/dns-query"`的形式，如`"https+local://dns.google/dns-query"`，V2Ray 会使用 `DOH本地模式` 进行查询，即 DOH 请求不会经过 Routing/Outbound 等组件，直接对外请求，以降低耗时。一般适合在服务端使用。也可使用非标端口和路径。(4.22.0+)
 
 {% hint style='info' %}
 
 当使用 `localhost` 时，本机的 DNS 请求不受 V2Ray 控制，需要额外的配置才可以使 DNS 请求由 V2Ray 转发。
 
-不同规则初始化得到的DNS客户端会在V2Ray启动日志中以`info`级别体现，比如`local DOH` `remote DOH` `udp`等模式。（4.22.0+）
+不同规则初始化得到的 DNS 客户端会在 V2Ray 启动日志中以`info`级别体现，比如`local DOH` `remote DOH` `udp`等模式。（4.22.0+）
 
 {% endhint %}
 
@@ -112,11 +112,11 @@ DNS服务器的处理流程示意图如下：
 
 > `address`: address
 
-DNS 服务器地址，如`"8.8.8.8"`。对于普通DNS IP地址只支持 UDP 协议的 DNS 服务器，若地址是以`"https://"`或`"https+local://"`开头的URL形式，则使用DOH模式，规则同字符串模式的DOH配置。
+DNS 服务器地址，如`"8.8.8.8"`。对于普通 DNS IP 地址只支持 UDP 协议的 DNS 服务器，若地址是以`"https://"`或`"https+local://"`开头的 URL 形式，则使用 DOH 模式，规则同字符串模式的 DOH 配置。
 
 > `port`: number
 
-DNS 服务器端口，如`53`。此项缺省时默认为`53`。当使用DOH模式该项无效，非标端口应在URL中指定。
+DNS 服务器端口，如`53`。此项缺省时默认为`53`。当使用 DOH 模式该项无效，非标端口应在 URL 中指定。
 
 > `domains`: \[string\]
 

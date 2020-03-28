@@ -62,7 +62,7 @@ V2Ray 提供两种验证方式：
 1. 确认该发行版不是上古版本。
 2. 确认该发行版使用 systemd：
 
-    ```
+    ```plain
     # ls -l /sbin/init
     ```
 
@@ -70,20 +70,20 @@ V2Ray 提供两种验证方式：
 
 3. 移除原安装脚本的安装：
 
-    ```
+    ```plain
     # bash <(curl -L https://install.direct/go.sh) --remove
     # rm -r /var/log/v2ray/
     ```
 
 4. 迁移配置文件路径：
 
-    ```
+    ```plain
     # mv /etc/v2ray/ /usr/local/etc/
     ```
 
 5. 使用新的安装脚本：
 
-    ```
+    ```plain
     # bash <(curl https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
     ```
 
@@ -95,37 +95,37 @@ V2Ray 提供两种验证方式：
 
 将 `/srv/http/example.com.key` 修改为 644 即可：
 
-```
+```plain
 # chmod 644 /srv/http/example.com.key
 ```
 
 除此之外，还有另一个方法。
 
-```
+```plain
 # id nobody
 ```
 
 显示出来的结果可能是：
 
-```
+```plain
 uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
 ```
 
 也可能是：
 
-```
+```plain
 uid=65534(nobody) gid=65534(nobody) groups=65534(nobody)
 ```
 
 相应的，只需要执行：
 
-```
+```plain
 # chown -R nobody:nogroup /srv/http/
 ```
 
 或是：
 
-```
+```plain
 # chown -R nobody:nobody /srv/http/
 ```
 
@@ -180,9 +180,9 @@ go.sh 支持如下参数，可在手动安装时根据实际情况调整：
 
 V2Ray 提供了预编译的 Docker image：
 
-* [v2fly/v2ray-core](https://hub.docker.com/r/v2fly/v2fly-core): 其中`latest`标签会跟随[v2fly](https://github.com/v2fly/docker-fly)编译仓库提交保持最新，而各个版本以tag方式发布，比如`4.21.3`。
+* [v2fly/v2ray-core](https://hub.docker.com/r/v2fly/v2fly-core): 其中`latest`标签会跟随[v2fly](https://github.com/v2fly/docker-fly)编译仓库提交保持最新，而各个版本以 tag 方式发布，比如`4.21.3`。
 
-docker image 的文件结构跟Linux下安装的路径相同：
+docker image 的文件结构跟 Linux 下安装的路径相同：
 
 * /etc/v2ray/config.json: 配置文件
 * /usr/bin/v2ray/v2ray: V2Ray 主程序

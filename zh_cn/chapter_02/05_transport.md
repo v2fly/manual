@@ -268,7 +268,7 @@ TLS 配置。TLS 由 Golang 提供，支持 TLS 1.2，不支持 DTLS。
 
 > `tcpFastOpen`: true | false
 
-是否启用 [TCP Fast Open](https://zh.wikipedia.org/wiki/TCP%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80)。当其值为`true`时，强制开启TFO；当其它为`false`时，强制关闭TFO；当此项不存在时，使用系统默认设置。可用于入站出站连接。
+是否启用 [TCP Fast Open](https://zh.wikipedia.org/wiki/TCP%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80)。当其值为`true`时，强制开启 TFO；当其它为`false`时，强制关闭 TFO；当此项不存在时，使用系统默认设置。可用于入站出站连接。
 
 * 仅在以下版本（或更新版本）的操作系统中可用:
   * Windows 10 (1604)

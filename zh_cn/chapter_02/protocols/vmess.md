@@ -90,7 +90,7 @@ VMess 用户的主 ID。必须是一个合法的 UUID。
 
 * `"aes-128-gcm"`：推荐在 PC 上使用
 * `"chacha20-poly1305"`：推荐在手机端使用
-* `"auto"`：默认值，自动选择（运行框架为 AMD64、ARM64 或 s390x 时为aes-128-gcm加密方式，其他情况则为 Chacha20-Poly1305 加密方式）
+* `"auto"`：默认值，自动选择（运行框架为 AMD64、ARM64 或 s390x 时为 aes-128-gcm 加密方式，其他情况则为 Chacha20-Poly1305 加密方式）
 * `"none"`：不加密
 
 {% hint style='info' %}

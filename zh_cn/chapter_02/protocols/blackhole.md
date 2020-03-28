@@ -34,4 +34,4 @@ Blackhole（黑洞）是一个出站数据协议，它会阻碍所有数据的�
 
 > `type`: "http" | "none"
 
-当`type`为`"none"`（默认值）时，Blackhole将直接关闭连接。当`type`为`"http"`时，Blackhole会发回一个简单的 HTTP 403 数据包，然后关闭连接。
+当`type`为`"none"`（默认值）时，Blackhole 将直接关闭连接。当`type`为`"http"`时，Blackhole 会发回一个简单的 HTTP 403 数据包，然后关闭连接。

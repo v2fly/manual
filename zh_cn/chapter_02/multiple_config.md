@@ -4,9 +4,9 @@ refcn: chapter_02/multiple_config
 
 ## 多文件配置
 
-自版本`4.23.0`起，v2ray程序支持使用多个配置文件。
+自版本`4.23.0`起，v2ray 程序支持使用多个配置文件。
 
-多配置文件的主要作用在于分散不同作用模块配置，便于管理和维护。该功能主要考虑是为了丰富v2ray生态链，比如对于GUI的客户端，一般只实现节点选择等固定的功能，对于太复杂的配置难以图形化实现；只需留一个`confdir`的自定义配置目录供配置复杂的功能；对于服务器的部署脚本，只需往`confdir`添加文件即可实现配置多种协议...等等。
+多配置文件的主要作用在于分散不同作用模块配置，便于管理和维护。该功能主要考虑是为了丰富 v2ray 生态链，比如对于 GUI 的客户端，一般只实现节点选择等固定的功能，对于太复杂的配置难以图形化实现；只需留一个`confdir`的自定义配置目录供配置复杂的功能；对于服务器的部署脚本，只需往`confdir`添加文件即可实现配置多种协议...等等。
 
 ## 多文件启动信息例子
 
@@ -30,19 +30,19 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 
 命令行的`-config`可以多次指定。（也可以简写为`-c`，完全等效。）
 
-```
+```plain
 ./v2ray -config base.json -config cf1.json -c cf2.json -c cf3.json
 ```
 
 或者用`-confdir`参数指定一个目录，程序会按文件名顺序读取目录内的`.json`文件。
 
-```
+```plain
 ./v2ray -confdir /etc/v2ray/confs
 ```
 
 也可组合使用。（注意，目录内的配置级别作用在`-config`参数后，不管`-confdir`参数的位置）
 
-```
+```plain
 ./v2ray -c cf1.json -c cf2.json -confdir /etc/v2ray/confs 
 ```
 
@@ -52,7 +52,7 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 
 #### 普通对象（`{}`）
 
-** 在json的顶级对象当中，后者覆盖或补充前者。**
+**在 json 的顶级对象当中，后者覆盖或补充前者。**
 
 比如：
 
@@ -77,9 +77,9 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 }
 ```
 
-以多配置启动v2ray: `./v2ray -c base.json -c outbounds.json`，这两个配置文件的就等效于合成一起的整配置。当需要修改出口节点，只需要修改`outbounds.json`内容。
+以多配置启动 v2ray: `./v2ray -c base.json -c outbounds.json`，这两个配置文件的就等效于合成一起的整配置。当需要修改出口节点，只需要修改`outbounds.json`内容。
 
-如果需要改编日志log的级别，也不需要改`base.json`，后续加一个配置：
+如果需要改编日志 log 的级别，也不需要改`base.json`，后续加一个配置：
 
 * debuglog.json
 ```json
@@ -88,21 +88,21 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 }
 ```
 
-启动时放置在base后，即可输出debug级别的日志：
+启动时放置在 base 后，即可输出 debug 级别的日志：
 
 `./v2ray -c base.json -c outbounds.json -c debuglog.json`
 
 
 #### 数组（`[]`）
 
-在json配置中的`inbounds`和`outbounds`是数组结构，他们有特殊的规则：
+在 json 配置中的`inbounds`和`outbounds`是数组结构，他们有特殊的规则：
 
-* 当配置中的数组元素有2或以上，覆盖前者的inbounds/oubounds；
-* 当配置中的数组元素只有1个时，查找原有`tag`相同的元素进行覆盖；若无法找到：
-  - 对于inbounds，添加至最后（inbounds内元素顺序无关）
-  - 对于outbounds，添加至最前（outbounds默认首选出口）；但如果文件名含有tail(大小写均可)，添加至最后。
+* 当配置中的数组元素有 2 或以上，覆盖前者的 inbounds/oubounds；
+* 当配置中的数组元素只有 1 个时，查找原有`tag`相同的元素进行覆盖；若无法找到：
+  - 对于 inbounds，添加至最后（inbounds 内元素顺序无关）
+  - 对于 outbounds，添加至最前（outbounds 默认首选出口）；但如果文件名含有 tail(大小写均可)，添加至最后。
 
-借助多配置，可以很方便为原有的配置添加不同协议的inbound，而不必修改原有配置。
+借助多配置，可以很方便为原有的配置添加不同协议的 inbound，而不必修改原有配置。
 
 以下例子不是有效配置，只为展示上述规则。
 
