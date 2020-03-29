@@ -159,8 +159,8 @@ bash <(curl -L -s https://install.direct/go.sh)
 脚本运行完成后，你需要：
 
 1. 编辑 /etc/v2ray/config.json 文件来配置你需要的代理方式；
-2. 运行 systemctl v2ray start 来启动 V2Ray 进程；
-3. 之后可以使用 systemctl v2ray start | stop| status | reload | restart | force-reload 控制 V2Ray 的运行。
+2. 运行 systemctl start v2ray 来启动 V2Ray 进程；
+3. 之后可以使用 systemctl start | stop | restart | enable | disable | status v2ray 控制 V2Ray 的运行。
 
 ### go.sh 参数 {#gosh}
 
