@@ -10,9 +10,9 @@ refen: welcome/install
 V2Ray 在以下平台中可用：
 
 * Windows 7 及之后版本（x86 / amd64）；
-* Mac OS X 10.10 Yosemite 及之后版本（amd64）；
+* macOS 10.10 Yosemite 及之后版本（amd64）；
 * Linux 2.6.23 及之后版本（x86 / amd64 / arm / arm64 / mips64 / mips）；
-  * 包括但不限于 Debian 7 / 8、Ubuntu 12.04 / 14.04 及后续版本、CentOS 6 / 7、Arch Linux；
+  * 包括但不限于 Debian 7 / 8、Ubuntu 12.04 / 14.04 及后续版本、CentOS 6 / 7、Arch Linux 等；
 * FreeBSD (x86 / amd64)；
 * OpenBSD (x86 / amd64)；
 * Dragonfly BSD (amd64)；
@@ -21,28 +21,28 @@ V2Ray 在以下平台中可用：
 
 预编译的压缩包可以在如下几个站点找到：
 
-1. Github Release: [github.com/v2ray/v2ray-core](https://github.com/v2ray/v2ray-core/releases)
-1. Github 分流: [github.com/v2ray/dist](https://github.com/v2ray/dist/)
-1. Homebrew: [github.com/v2ray/homebrew-v2ray](https://github.com/v2ray/homebrew-v2ray)
-1. Arch Linux: [packages/community/x86_64/v2ray/](https://www.archlinux.org/packages/community/x86_64/v2ray/)
-1. Snapcraft: [snapcraft.io/v2ray-core](https://snapcraft.io/v2ray-core)
+1. Github Release：[github.com/v2ray/v2ray-core](https://github.com/v2ray/v2ray-core/releases)
+2. Github 分流：[github.com/v2ray/dist](https://github.com/v2ray/dist/)
+3. Homebrew：[github.com/v2ray/homebrew-v2ray](https://github.com/v2ray/homebrew-v2ray)
+4. Arch Linux：[packages/community/x86_64/v2ray/](https://www.archlinux.org/packages/community/x86_64/v2ray/)
+5. Snapcraft：[snapcraft.io/v2ray-core](https://snapcraft.io/v2ray-core)
 
-压缩包均为 zip 格式，找到对应平台的压缩包，下载解压即可使用。
+压缩包均为 ZIP 格式，找到对应平台的压缩包，下载解压即可使用。
 
 ## 验证安装包 {#verify}
 
 V2Ray 提供两种验证方式：
 
-1. 安装包 zip 文件的 SHA1 / SHA256 摘要，在每个安装包对应的`.dgst`文件中可以找到。
-1. 可运行程序（v2ray 或 v2ray.exe）的 gpg 签名，文件位于安装包中的 v2ray.sig 或 v2ray.exe.sig。签名公钥可以[在代码库中](https://raw.githubusercontent.com/v2ray/v2ray-core/master/release/verify/official_release.asc)找到。
+1. 安装包 ZIP 文件的 SHA1 / SHA256 摘要，在每个安装包对应的 `.dgst` 文件中可以找到。
+2. 可运行程序（v2ray 或 v2ray.exe）的 GPG 签名，文件位于安装包中的 `v2ray.sig` 或 `v2ray.exe.sig`。签名公钥可以 [在代码库中](https://raw.githubusercontent.com/v2ray/v2ray-core/master/release/verify/official_release.asc) 找到。
 
-## Windows 和 Mac OS 安装方式
+## Windows 和 macOS 安装方式
 
 通过上述方式下载的压缩包，解压之后可看到 v2ray 或 v2ray.exe。直接运行即可。
 
 ## Linux 发行版仓库 {#linuxrepo}
 
-部分发行版可能已收录 V2Ray 到其官方维护和支持的软件仓库/软件源中。出于兼容性、适配性考虑，您可以考虑选用由您发行版开发团队维护的软件包或下文的安装脚本亦或基于已发布的二进制文件或源代码安装。
+部分发行版可能已收录 V2Ray 到其官方维护和支持的软件仓库／软件源中。出于兼容性和适配性考虑，建議选用由您所使用的发行版，其维护团队维护的软件包，然后再考虑使用下文的安装脚本，亦或基于已发布的二进制文件或源代码，进行手动安装。
 
 ## Linux 安装脚本 {#linuxscript}
 
@@ -166,10 +166,10 @@ bash <(curl -L -s https://install.direct/go.sh)
 
 go.sh 支持如下参数，可在手动安装时根据实际情况调整：
 
-* `-p` 或 `--proxy`: 使用代理服务器来下载 V2Ray 的文件，格式与 curl 接受的参数一致，比如 `"socks5://127.0.0.1:1080"` 或  `"http://127.0.0.1:3128"`。
-* `-f` 或 `--force`: 强制安装。在默认情况下，如果当前系统中已有最新版本的 V2Ray，go.sh 会在检测之后就退出。如果需要强制重装一遍，则需要指定该参数。
-* `--version`: 指定需要安装的版本，比如 `"v1.13"`。默认值为最新版本。
-* `--local`: 使用一个本地文件进行安装。如果你已经下载了某个版本的 V2Ray，则可通过这个参数指定一个文件路径来进行安装。
+* `-p` 或 `--proxy`：使用代理服务器来下载 V2Ray 的文件，格式与 curl 接受的参数一致，比如 `"socks5://127.0.0.1:1080"` 或 `"http://127.0.0.1:3128"`。
+* `-f` 或 `--force`：强制安装。在默认情况下，如果当前系统中已有最新版本的 V2Ray，go.sh 会在检测之后就退出。如果需要强制重装一遍，则需要指定该参数。
+* `--version`：指定需要安装的版本，比如 `"v1.13"`。默认值为最新版本。
+* `--local`：使用一个本地文件进行安装。如果你已经下载了某个版本的 V2Ray，则可通过这个参数指定一个文件路径来进行安装。
 
 示例：
 
@@ -180,12 +180,12 @@ go.sh 支持如下参数，可在手动安装时根据实际情况调整：
 
 V2Ray 提供了预编译的 Docker image：
 
-* [v2fly/v2ray-core](https://hub.docker.com/r/v2fly/v2fly-core): 其中`latest`标签会跟随[v2fly](https://github.com/v2fly/docker-fly)编译仓库提交保持最新，而各个版本以 tag 方式发布，比如`4.21.3`。
+* [v2fly/v2ray-core](https://hub.docker.com/r/v2fly/v2fly-core)：其中`latest`标签会跟随[v2fly](https://github.com/v2fly/docker-fly)编译仓库提交保持最新，而各个版本以 tag 方式发布，比如`4.21.3`。
 
 docker image 的文件结构跟 Linux 下安装的路径相同：
 
-* /etc/v2ray/config.json: 配置文件
-* /usr/bin/v2ray/v2ray: V2Ray 主程序
-* /usr/bin/v2ray/v2ctl: V2Ray 辅助工具
-* /usr/bin/v2ray/geoip.dat: IP 数据文件
-* /usr/bin/v2ray/geosite.dat: 域名数据文件
+* /etc/v2ray/config.json：配置文件
+* /usr/bin/v2ray/v2ray：V2Ray 主程序
+* /usr/bin/v2ray/v2ctl：V2Ray 辅助工具
+* /usr/bin/v2ray/geoip.dat：IP 数据文件
+* /usr/bin/v2ray/geosite.dat：域名数据文件

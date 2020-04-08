@@ -27,18 +27,18 @@ refen: configuration/protocols/shadowsocks
 * 插件：
   * 通过 Standalone 模式支持 obfs
 
-Shadowsocks 的配置分为两部分，`InboundConfigurationObject`和`OutboundConfigurationObject`，分别对应入站和出站协议配置中的`settings`项。
+Shadowsocks 的配置分为两部分，`InboundConfigurationObject` 和 `OutboundConfigurationObject`，分别对应入站和出站协议配置中的 `settings` 项。
 
 ## InboundConfigurationObject
 
-```javascript
+```json
 {
-  "email": "love@v2ray.com",
-  "method": "aes-128-cfb",
-  "password": "密码",
-  "level": 0,
-  "ota": true,
-  "network": "tcp"
+    "email": "love@v2ray.com",
+    "method": "aes-128-cfb",
+    "password": "密码",
+    "level": 0,
+    "ota": true,
+    "network": "tcp"
 }
 ```
 
@@ -48,7 +48,7 @@ Shadowsocks 的配置分为两部分，`InboundConfigurationObject`和`OutboundC
 
 > `method`: string
 
-必填。可选的值见[加密方式列表](#encryption-list)
+必填。可选的值见 [加密方式列表](#encryption-list)
 
 > `password`: string
 
@@ -56,7 +56,7 @@ Shadowsocks 的配置分为两部分，`InboundConfigurationObject`和`OutboundC
 
 > `level`: number
 
-用户等级，默认值为 `0`。详见[本地策略](../policy.md)。
+用户等级，默认值为 `0`。详见 [本地策略](../policy.md)。
 
 > `ota`: true | false
 
@@ -66,23 +66,23 @@ Shadowsocks 的配置分为两部分，`InboundConfigurationObject`和`OutboundC
 
 > `network`: "tcp" | "udp" | "tcp,udp"
 
-可接收的网络连接类型，默认值为`"tcp"`。
+可接收的网络连接类型，默认值为 `"tcp"`。
 
 ## OutboundConfigurationObject
 
-```javascript
+```json
 {
-  "servers": [
-    {
-      "email": "love@v2ray.com",
-      "address": "127.0.0.1",
-      "port": 1234,
-      "method": "加密方式",
-      "password": "密码",
-      "ota": false,
-      "level": 0
-    }
-  ]
+    "servers": [
+        {
+            "email": "love@v2ray.com",
+            "address": "127.0.0.1",
+            "port": 1234,
+            "method": "加密方式",
+            "password": "密码",
+            "ota": false,
+            "level": 0
+        }
+    ]
 }
 ```
 
@@ -92,15 +92,15 @@ Shadowsocks 的配置分为两部分，`InboundConfigurationObject`和`OutboundC
 
 ### ServerObject
 
-```javascript
+```json
 {
-  "email": "love@v2ray.com",
-  "address": "127.0.0.1",
-  "port": 1234,
-  "method": "加密方式",
-  "password": "密码",
-  "ota": false,
-  "level": 0
+    "email": "love@v2ray.com",
+    "address": "127.0.0.1",
+    "port": 1234,
+    "method": "加密方式",
+    "password": "密码",
+    "ota": false,
+    "level": 0
 }
 ```
 
@@ -126,7 +126,7 @@ Shadowsocks 服务器端口。必填。
 
 > `ota`: true | false
 
-是否开启 Shadowsocks 的一次验证（One time auth），默认值为`false`。
+是否开启 Shadowsocks 的一次验证（One time auth），默认值为 `false`。
 
 当使用 AEAD 时，`ota` 设置无效。
 

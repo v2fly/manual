@@ -21,11 +21,11 @@ V2RayN 是一个基于 V2Ray 内核的 Windows 客户端。下载：[GitHub](htt
 
 > V2RayX <img width="20" src="/resources/apple.svg">
 
-V2RayX 是一个基于 V2Ray 内核的 Mac OS X 客户端。用户可以通过界面生成配置文件，并且可以手动更新 V2Ray 内核。V2RayX 还可以配置系统代理。下载：[Github](https://github.com/Cenmrev/V2RayX)
+V2RayX 是一个基于 V2Ray 内核的 macOS 客户端。用户可以通过界面生成配置文件，并且可以手动更新 V2Ray 内核。V2RayX 还可以配置系统代理。下载：[Github](https://github.com/Cenmrev/V2RayX)
 
 > V2RayU <img width="20" src="/resources/apple.svg">
 
-V2rayU,基于 v2ray 核心的 mac 版客户端,界面友好,使用 swift4.2 编写,支持 vmess,shadowsocks,socks5 等服务协议,支持订阅, 支持二维码,剪贴板导入,手动配置,二维码分享等。下载：[GitHub](https://github.com/yanue/V2rayU)
+V2rayU，基于 V2Ray 核心的 macOS 客户端，界面友好，使用 swift4.2 编写，支持 vmess，shadowsocks，socks5 等服务协议，支持订阅，支持二维码，剪贴板导入，手动配置，二维码分享等。下载：[GitHub](https://github.com/yanue/V2rayU)
 
 > ClashX <img width="20" src="/resources/apple.svg">
 
@@ -39,13 +39,13 @@ Qv2ray：使用 Qt 和 C++ 编写的 V2ray 图形客户端，包含订阅管理�
 
 > Mellow <img width="20" src="/resources/win.svg"> <img width="20" src="/resources/apple.svg"> <img width="20" src="/resources/linux.svg">
 
-Mellow 是一个基于规则的全局透明代理工具，可以运行在 Windows、macOS 和 Linux 上，也可以配置成路由器透明代理或代理网关，支持 SOCKS、HTTP、Shadowsocks、VMess 等多种代理协议。
+Mellow 是一个基于规则的全局透明代理工具，可以运行在 Windows、macOS 和 Linux 上，也可以配置成路由器透明代理或代理网关，支持 Socks、HTTP、Shadowsocks、VMess 等多种代理协议。
 
 Download: [Github](https://github.com/mellow-io/mellow)
 
 > Kitsunebi <img width="20" src="/resources/ios.svg"> <img width="20" src="/resources/android.svg">
 
-Kitsunebi 是一个基于 V2Ray 核心的移动平台应用 (iOS, Android)。它可以创建基于 VMess 或者 Shadowsocks 的 VPN 连接。Kitsunebi 支持导入和导出与 V2Ray 兼容的 JSON 配置。
+Kitsunebi 是一个基于 V2Ray 核心的移动平台应用（iOS 和 Android）。它可以创建基于 VMess 或者 Shadowsocks 的 VPN 连接。Kitsunebi 支持导入和导出与 V2Ray 兼容的 JSON 配置。
 
 由于使用 V2Ray 核心，Kitsunebi 几乎支持 V2Ray 的所有功能，比如 Mux 和 mKCP。
 

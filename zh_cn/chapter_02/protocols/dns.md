@@ -5,8 +5,8 @@ refen: configuration/protocols/dns
 
 # DNS
 
-* 名称: `dns`
-* 类型: 出站协议
+* 名称：`dns`
+* 类型：出站协议
 
 DNS 是一个出站协议，主要用于拦截和转发 DNS 查询。此出站协议只能接收 DNS 流量（包含基于 UDP 和 TCP 协议的查询），其它类型的流量会导致错误。
 
@@ -16,7 +16,7 @@ DNS 出站协议在 V2Ray 4.15 中引入。
 
 ## OutboundConfigurationObject
 
-```javascript
+```json
 {
     "network": "tcp",
     "address": "1.1.1.1",
@@ -26,7 +26,7 @@ DNS 出站协议在 V2Ray 4.15 中引入。
 
 > `network`: "tcp" | "udp"
 
-(V2Ray 4.16+) 修改 DNS 流量的传输层协议，可选的值有`"tcp"`和`"udp"`。当不指定时，保持来源的传输方式不变。
+(V2Ray 4.16+) 修改 DNS 流量的传输层协议，可选的值有 `"tcp"` 和 `"udp"`。当不指定时，保持来源的传输方式不变。
 
 > `address`: address
 

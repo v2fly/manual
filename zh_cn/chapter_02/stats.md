@@ -9,14 +9,14 @@ V2Ray 提供了一些关于其运行状况的统计信息。
 
 ## StatsObject
 
-`StatsObject` 对应配置文件中的`stats`项。
+`StatsObject` 对应配置文件中的 `stats` 项。
 
-```javascript
+```json
 {
 }
 ```
 
-目前统计信息没有任何参数，只要`StatsObject`项存在，内部的统计即会开启。同时你还需要在 [Policy](policy.md) 中开启对应的项，才可以统计对应的数据。
+目前统计信息没有任何参数，只要 `StatsObject` 项存在，内部的统计即会开启。同时你还需要在 [Policy](policy.md) 中开启对应的项，才可以统计对应的数据。
 
 目前已有的统计信息如下：
 

@@ -9,18 +9,18 @@ mKCP 使用 UDP 来模拟 TCP 连接，请确定主机上的防火墙配置正�
 
 ## KcpObject
 
-```javascript
+```json
 {
-  "mtu": 1350,
-  "tti": 20,
-  "uplinkCapacity": 5,
-  "downlinkCapacity": 20,
-  "congestion": false,
-  "readBufferSize": 1,
-  "writeBufferSize": 1,
-  "header": {
-    "type": "none"
-  }
+    "mtu": 1350,
+    "tti": 20,
+    "uplinkCapacity": 5,
+    "downlinkCapacity": 20,
+    "congestion": false,
+    "readBufferSize": 1,
+    "writeBufferSize": 1,
+    "header": {
+        "type": "none"
+    }
 }
 ```
 
@@ -66,9 +66,9 @@ mKCP 使用 UDP 来模拟 TCP 连接，请确定主机上的防火墙配置正�
 
 ### HeaderObject
 
-```javascript
+```json
 {
-  "type": "none"
+    "type": "none"
 }
 ```
 
@@ -76,17 +76,17 @@ mKCP 使用 UDP 来模拟 TCP 连接，请确定主机上的防火墙配置正�
 
 伪装类型，可选的值有：
 
-* `"none"`: 默认值，不进行伪装，发送的数据是没有特征的数据包。
-* `"srtp"`: 伪装成 SRTP 数据包，会被识别为视频通话数据（如 FaceTime）。
-* `"utp"`: 伪装成 uTP 数据包，会被识别为 BT 下载数据。
-* `"wechat-video"`: 伪装成微信视频通话的数据包。
-* `"dtls"`: 伪装成 DTLS 1.2 数据包。
-* `"wireguard"`: 伪装成 WireGuard 数据包。(并不是真正的 WireGuard 协议)
+* `"none"`：默认值，不进行伪装，发送的数据是没有特征的数据包。
+* `"srtp"`：伪装成 SRTP 数据包，会被识别为视频通话数据（如 FaceTime）。
+* `"utp"`：伪装成 uTP 数据包，会被识别为 BT 下载数据。
+* `"wechat-video"`：伪装成微信视频通话的数据包。
+* `"dtls"`：伪装成 DTLS 1.2 数据包。
+* `"wireguard"`：伪装成 WireGuard 数据包。（并不是真正的 WireGuard 协议）
 
 ## 鸣谢 {#credits}
 
-* @skywind3000 发明并实现了 KCP 协议；
-* @xtaci 将 KCP 由 C 语言实现翻译成 Go；
+* @skywind3000 发明并实现了 KCP 协议。
+* @xtaci 将 KCP 由 C 语言实现翻译成 Go。
 * @xiaokangwang 测试 KCP 与 V2Ray 的整合并提交了最初的 PR。
 
 ## 对 KCP 协议的改进

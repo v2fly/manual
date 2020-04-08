@@ -7,20 +7,20 @@ refen: configuration/api
 
 V2Ray 中可以开放一些 API 以便远程调用。这些 API 都基于 [gRPC](https://grpc.io/)。
 
-当远程控制开启时，V2Ray 会自建一个出站代理，以`tag`配置的值为标识。用户必须手动将所有的 gRPC 入站连接通过[路由](03_routing.md)指向这一出站代理。
+当远程控制开启时，V2Ray 会自建一个出站代理，以 `tag` 配置的值为标识。用户必须手动将所有的 gRPC 入站连接通过 [路由](03_routing.md) 指向这一出站代理。
 
 ## ApiObject
 
-`ApiObject`对应配置文件中的`api`项。
+`ApiObject` 对应配置文件中的 `api` 项。
 
-```javascript
+```json
 {
-  "tag": "api",
-  "services": [
-    "HandlerService",
-    "LoggerService",
-    "StatsService"
-  ]
+    "tag": "api",
+    "services": [
+        "HandlerService",
+        "LoggerService",
+        "StatsService"
+    ]
 }
 ```
 
@@ -30,7 +30,7 @@ V2Ray 中可以开放一些 API 以便远程调用。这些 API 都基于 [gRPC]
 
 > `services`: \[string\]
 
-开启的 API 列表，可选的值见[API 列表](#api-list)。
+开启的 API 列表，可选的值见 [API 列表](#api-list)。
 
 ## 支持的 API 列表 {#api-list}
 
@@ -51,4 +51,4 @@ V2Ray 中可以开放一些 API 以便远程调用。这些 API 都基于 [gRPC]
 
 ### StatsService
 
-内置的数据统计服务，详见[统计信息](stats.md)。
+内置的数据统计服务，详见 [统计信息](stats.md)。

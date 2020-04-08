@@ -6,28 +6,28 @@ refen: configuration/protocols/http
 # HTTP
 
 * 名称：`http`
-* 类型：入站 / 出站
+* 类型：入站／出站
 
-HTTP 的配置分为两部分，`InboundConfigurationObject`和`OutboundConfigurationObject`，分别对应入站和出站协议配置中的`settings`项。
+HTTP 的配置分为两部分，`InboundConfigurationObject` 和 `OutboundConfigurationObject`，分别对应入站和出站协议配置中的 `settings` 项。
 
 ## InboundConfigurationObject
 
-```javascript
+```json
 {
-  "timeout": 0,
-  "accounts": [
-    {
-      "user": "my-username",
-      "pass": "my-password"
-    }
-  ],
-  "allowTransparent": false,
-  "userLevel": 0
+    "timeout": 0,
+    "accounts": [
+        {
+            "user": "my-username",
+            "pass": "my-password"
+        }
+    ],
+    "allowTransparent": false,
+    "userLevel": 0
 }
 ```
 
 {% hint style='info' %}
-应该注意，虽然`http inbound`可以提供公共服务，但 http 协议没有对传输加密，不适宜经公网中传输，更容易成为被人用作攻击的肉鸡。`http inbound`更有意义的用法是在局域网或本机环境下监听，为其他程序提供本地服务。
+应该注意，虽然 `http inbound` 可以提供公共服务，但 http 协议没有对传输加密，不适宜经公网中传输，更容易成为被人用作攻击的肉鸡。`http inbound` 更有意义的用法是在局域网或本机环境下监听，为其他程序提供本地服务。
 {% endhint %}
 
 > `timeout`: number
@@ -42,7 +42,7 @@ HTTP 的配置分为两部分，`InboundConfigurationObject`和`OutboundConfigur
 
 > `allowTransparent`: true | false
 
-当为`true`时，会转发所有 HTTP 请求，而非只是代理请求。若配置不当，开启此选项会导致死循环。
+当为 `true` 时，会转发所有 HTTP 请求，而非只是代理请求。若配置不当，开启此选项会导致死循环。
 
 > `userLevel`: number
 
@@ -50,10 +50,10 @@ HTTP 的配置分为两部分，`InboundConfigurationObject`和`OutboundConfigur
 
 ### AccountObject
 
-```javascript
+```json
 {
-  "user": "my-username",
-  "pass": "my-password"
+    "user": "my-username",
+    "pass": "my-password"
 }
 ```
 
@@ -74,33 +74,33 @@ HTTP 的配置分为两部分，`InboundConfigurationObject`和`OutboundConfigur
 
 ## OutboundConfigurationObject
 
-```javascript
+```json
 {
-  "servers": [
-    {
-      "address": "192.168.108.1",
-      "port": 3128,
-      "users": [
+    "servers": [
         {
-          "user": "my-username",
-          "pass": "my-password"
+            "address": "192.168.108.1",
+            "port": 3128,
+            "users": [
+                {
+                    "user": "my-username",
+                    "pass": "my-password"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
 ```
 
 (V2ray 4.21.0+)
 
 {% hint style='info' %}
-应该注意，虽然`http outbound`可以作为对外访问的配置，但`http proxy`协议没有对传输加密，不适宜经公网中传输，且因不支持 udp 传输将会导致 core 功能受限（Routing 过程的的 DNS 查询不可用）。`http outbound`更有意义的用法是在特殊情况下，只能使用`http proxy`对外访问内部网络中，作为为其他协议连接代理服务器的前置代理使用（见`OutboundObject`的`ProxySettingsObject`）。另因`http proxy`只能代理 tcp 协议，udp 系的协议均不能通过。
+应该注意，虽然 `http outbound` 可以作为对外访问的配置，但 `http proxy` 协议没有对传输加密，不适宜经公网中传输，且因不支持 udp 传输将会导致 core 功能受限（Routing 过程的的 DNS 查询不可用）。`http outbound` 更有意义的用法是在特殊情况下，只能使用 `http proxy` 对外访问内部网络中，作为为其他协议连接代理服务器的前置代理使用（见 `OutboundObject` 的 `ProxySettingsObject`）。另因 `http proxy` 只能代理 tcp 协议，udp 系的协议均不能通过。
 {% endhint %}
 
 (V2ray 4.21.1+)
 
 {% hint style='info' %}
-4.20.0 版本中引入了 http outbound 作为其他协议的前置代理用法中，缺乏了对 tls 配置的支持。4.21.1 的补丁版本中对`streamSettings`中的`security`和`tlsSettings`保留生效。目前前置代理的用法中，vmess/tcp、vmess/tcp-tls 和 shadowsocks 等三种协议方式可使用，其他传输协议的前置代理用法需后续版本开发支持。
+4.20.0 版本中引入了 http outbound 作为其他协议的前置代理用法中，缺乏了对 TLS 配置的支持。4.21.1 的补丁版本中对 `streamSettings` 中的 `security` 和 `tlsSettings` 保留生效。目前前置代理的用法中，vmess/tcp、vmess/tcp-tls 和 shadowsocks 等三种协议方式可使用，其他传输协议的前置代理用法需后续版本开发支持。
 {% endhint %}
 
 > `servers`: 数组

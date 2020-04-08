@@ -15,11 +15,11 @@ Domain Socket 使用标准的 Unix domain socket 来传输数据。它的优势�
 
 ## DomainSocketObject
 
-`DomainSocketObject`对应传输配置中的`dsSettings`项。
+`DomainSocketObject` 对应传输配置中的 `dsSettings` 项。
 
-```javascript
+```json
 {
-  "path": "/path/to/ds/file"
+    "path": "/path/to/ds/file"
 }
 ```
 

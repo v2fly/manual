@@ -5,8 +5,8 @@ refen: configuration/protocols/mtproto
 
 # MTProto
 
-* 名称: `mtproto`
-* 类型: 入站 / 出站
+* 名称：`mtproto`
+* 类型：入站／出站
 
 MTProto 是一个 Telegram 专用的代理协议。在 V2Ray 中可使用一组入站出站代理来完成 Telegram 数据的代理任务。
 
@@ -14,13 +14,15 @@ MTProto 是一个 Telegram 专用的代理协议。在 V2Ray 中可使用一组�
 
 ## InboundConfigurationObject
 
-```javascript
+```json
 {
-  "users": [{
-    "email": "love@v2ray.com",
-    "level": 0,
-    "secret": "b0cbcef5a486d9636472ac27f8e11a9d"
-  }]
+    "users": [
+        {
+            "email": "love@v2ray.com",
+            "level": 0,
+            "secret": "b0cbcef5a486d9636472ac27f8e11a9d"
+        }
+    ]
 }
 ```
 
@@ -30,11 +32,11 @@ MTProto 是一个 Telegram 专用的代理协议。在 V2Ray 中可使用一组�
 
 ### UserObject
 
-```javascript
+```json
 {
-  "email": "love@v2ray.com",
-  "level": 0,
-  "secret": "b0cbcef5a486d9636472ac27f8e11a9d"
+    "email": "love@v2ray.com",
+    "level": 0,
+    "secret": "b0cbcef5a486d9636472ac27f8e11a9d"
 }
 ```
 
@@ -48,7 +50,7 @@ MTProto 是一个 Telegram 专用的代理协议。在 V2Ray 中可使用一组�
 
 > `secret`: string
 
-用户密钥。必须为 32 个字符，仅可包含`0`到`9`和`a`到`f`之间的字符。
+用户密钥。必须为 32 个字符，仅可包含 `0` 到 `9` 和 `a` 到 `f` 之间的字符。
 
 {% hint style='info' %}
 使用此命令生成 MTProto 代理所需要的用户密钥：`openssl rand -hex 16`
@@ -56,7 +58,7 @@ MTProto 是一个 Telegram 专用的代理协议。在 V2Ray 中可使用一组�
 
 ## OutboundConfigurationObject
 
-```javascript
+```json
 {
 }
 ```
@@ -69,32 +71,36 @@ MTProto 仅可用于 Telegram 数据。你可能需要一个路由来绑定对�
 
 ```javascript
 {
-  "tag": "tg-in",
-  "port": 443,
-  "protocol": "mtproto",
-  "settings": {
-    "users": [{"secret": "b0cbcef5a486d9636472ac27f8e11a9d"}]
-  }
+    "tag": "tg-in",
+    "port": 443,
+    "protocol": "mtproto",
+    "settings": {
+        "users": [
+            {
+                "secret": "b0cbcef5a486d9636472ac27f8e11a9d"
+            }
+        ]
+    }
 }
 ```
 
 出站代理：
 
-```javascript
+```json
 {
-  "tag": "tg-out",
-  "protocol": "mtproto",
-  "settings": {}
+    "tag": "tg-out",
+    "protocol": "mtproto",
+    "settings": {}
 }
 ```
 
 路由：
 
-```javascript
+```json
 {
-  "type": "field",
-  "inboundTag": ["tg-in"],
-  "outboundTag": "tg-out"
+    "type": "field",
+    "inboundTag": ["tg-in"],
+    "outboundTag": "tg-out"
 }
 ```
 

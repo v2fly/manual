@@ -13,15 +13,21 @@ JSON，全称 [JavaScript Object Notation](https://en.wikipedia.org/wiki/JSON)�
 
 一个 JSON 对象包含一系列的键值对（Key-Value Pair），一个键是一个字符串（String），而值有多种类型，常见的有字符串（String）、数字（Number）、布尔（Bool）、数组（Array）和对象（Object）。下面是一个简单的 JSON 对象示例：
 
-```javascript
+```json
 {
-  "stringValue": "This is a string.",
-  "numberValue": 42,
-  "boolValue": true,
-  "arrayValue": ["this", "is", "a", "string", "array"],
-  "objectValue": {
-    "another": "object"
-  }
+    "stringValue": "This is a string.",
+    "numberValue": 42,
+    "boolValue": true,
+    "arrayValue": [
+        "this",
+        "is",
+        "a",
+        "string",
+        "array"
+    ],
+    "objectValue": {
+        "another": "object"
+    }
 }
 ```
 
