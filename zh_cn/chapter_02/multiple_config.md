@@ -31,19 +31,19 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 命令行的`-config`可以多次指定。（也可以简写为`-c`，完全等效。）
 
 ```
-./v2ray -config base.json -config cf1.json -c cf2.json -c cf3.json
+# v2ray -config base.json -config cf1.json -c cf2.json -c cf3.json
 ```
 
 或者用`-confdir`参数指定一个目录，程序会按文件名顺序读取目录内的`.json`文件。
 
 ```
-./v2ray -confdir /etc/v2ray/confs
+# v2ray -confdir /etc/v2ray/confs
 ```
 
 也可组合使用。（注意，目录内的配置级别作用在`-config`参数后，不管`-confdir`参数的位置）
 
 ```
-./v2ray -c cf1.json -c cf2.json -confdir /etc/v2ray/confs 
+# v2ray -c cf1.json -c cf2.json -confdir /etc/v2ray/confs
 ```
 
 也可使用 [环境变量](env.md#confdir) `v2ray.location.confdir` 或 `V2RAY_LOCATION_CONFDIR` 指定 `confdir`。参数 `-confdir` 的作用优先于环境变量，如果参数指定了有效的目录则不再读取环境变量中的路径。
@@ -82,7 +82,7 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 以多配置启动 V2Ray：
 
 ```
-v2ray -c base.json -c outbounds.json
+# v2ray -c base.json -c outbounds.json
 ```
 
 这两个配置文件的就等效于合成一起的整配置。当需要修改出口节点，只需要修改 `outbounds.json` 内容。
@@ -180,6 +180,8 @@ v2ray -c base.json -c outbounds.json
 
 ## 推荐的多文件列表
 
+执行：
+
 ```
 # for BASE in 00_log 01_api 02_dns 03_routing 04_policy 05_inbounds 06_outbounds 07_transport 08_stats 09_reverse; do echo '{}' > "/etc/v2ray/$BASE.json"; done
 ```
@@ -190,7 +192,6 @@ v2ray -c base.json -c outbounds.json
 # for BASE in 00_log 01_api 02_dns 03_routing 04_policy 05_inbounds 06_outbounds 07_transport 08_stats 09_reverse; do echo '{}' > "/usr/local/etc/v2ray/$BASE.json"; done
 ```
 
-```
 .
 ├── 00_log.json
 ├── 01_api.json
@@ -204,4 +205,3 @@ v2ray -c base.json -c outbounds.json
 └── 09_reverse.json
 
 0 directories, 10 files
-```
