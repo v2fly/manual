@@ -192,6 +192,7 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 # for BASE in 00_log 01_api 02_dns 03_routing 04_policy 05_inbounds 06_outbounds 07_transport 08_stats 09_reverse; do echo '{}' > "/usr/local/etc/v2ray/$BASE.json"; done
 ```
 
+```
 00_log.json
 01_api.json
 02_dns.json
@@ -204,3 +205,4 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 09_reverse.json
 
 0 directories, 10 files
+```
