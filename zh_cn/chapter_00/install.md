@@ -72,6 +72,7 @@ V2Ray 提供两种验证方式：
 
     ```
     # bash <(curl -L https://install.direct/go.sh) --remove
+
     # rm -r /var/log/v2ray/
     ```
 

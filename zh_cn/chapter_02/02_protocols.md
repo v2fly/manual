@@ -3,7 +3,7 @@ refcn: chapter_02/02_protocols
 refen: configuration/protocols
 ---
 
-# V2Ray 协议列表
+# 协议列表
 
 V2Ray 支持以下协议：
 
