@@ -62,7 +62,7 @@ V2Ray 提供两种验证方式：
 1. 确认该发行版不是上古版本。
 2. 确认该发行版使用 systemd：
 
-    ```
+    ```plain
     # ls -l /sbin/init
     ```
 
@@ -70,7 +70,7 @@ V2Ray 提供两种验证方式：
 
 3. 移除原安装脚本的安装：
 
-    ```
+    ```plain
     # bash <(curl -L https://install.direct/go.sh) --remove
 
     # rm -r /var/log/v2ray/
@@ -78,13 +78,13 @@ V2Ray 提供两种验证方式：
 
 4. 迁移配置文件路径：
 
-    ```
+    ```plain
     # mv /etc/v2ray/ /usr/local/etc/
     ```
 
 5. 使用新的安装脚本：
 
-    ```
+    ```plain
     # bash <(curl https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
     ```
 
@@ -96,37 +96,37 @@ V2Ray 提供两种验证方式：
 
 将 `/srv/http/example.com.key` 修改为 644 即可：
 
-```
+```plain
 # chmod 644 /srv/http/example.com.key
 ```
 
 除此之外，还有另一个方法。
 
-```
+```plain
 # id nobody
 ```
 
 显示出来的结果可能是：
 
-```
+```plain
 uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
 ```
 
 也可能是：
 
-```
+```plain
 uid=65534(nobody) gid=65534(nobody) groups=65534(nobody)
 ```
 
 相应的，只需要执行：
 
-```
+```plain
 # chown -R nobody:nogroup /srv/http/
 ```
 
 或是：
 
-```
+```plain
 # chown -R nobody:nobody /srv/http/
 ```
 

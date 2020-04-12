@@ -14,7 +14,7 @@ refcn: chapter_02/multiple_config
 启动信息中会提示依次读入的每个配置文件，留意启动信息是否符合你预设的顺序。
 {% endhint %}
 
-```
+```plain
 $ v2ray -c v2ray.json -c 00_base.json -c 01_info.json -c 02_log.json -c outbound.json
 V2Ray v4.23.0-version (user) 20200311-000000 (go1.13.8 linux/mipsle)
 A unified platform for anti-censorship.
@@ -30,19 +30,19 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 
 命令行的`-config`可以多次指定。（也可以简写为`-c`，完全等效。）
 
-```
+```plain
 # v2ray -config base.json -config cf1.json -c cf2.json -c cf3.json
 ```
 
 或者用`-confdir`参数指定一个目录，程序会按文件名顺序读取目录内的`.json`文件。
 
-```
+```plain
 # v2ray -confdir /etc/v2ray/confs
 ```
 
 也可组合使用。（注意，目录内的配置级别作用在`-config`参数后，不管`-confdir`参数的位置）
 
-```
+```plain
 # v2ray -c cf1.json -c cf2.json -confdir /etc/v2ray/confs
 ```
 
@@ -81,7 +81,7 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 
 以多配置启动 V2Ray：
 
-```
+```plain
 # v2ray -c base.json -c outbounds.json
 ```
 
@@ -101,7 +101,7 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 
 启动时放置在 base 后，即可输出 debug 级别的日志：
 
-```
+```plain
 # v2ray -c base.json -c outbounds.json -c debuglog.json
 ```
 
@@ -182,17 +182,17 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 
 执行：
 
-```
+```plain
 # for BASE in 00_log 01_api 02_dns 03_routing 04_policy 05_inbounds 06_outbounds 07_transport 08_stats 09_reverse; do echo '{}' > "/etc/v2ray/$BASE.json"; done
 ```
 
 或
 
-```
+```plain
 # for BASE in 00_log 01_api 02_dns 03_routing 04_policy 05_inbounds 06_outbounds 07_transport 08_stats 09_reverse; do echo '{}' > "/usr/local/etc/v2ray/$BASE.json"; done
 ```
 
-```
+```plain
 00_log.json
 01_api.json
 02_dns.json
