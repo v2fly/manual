@@ -2,7 +2,7 @@
 refcn: chapter_02/multiple_config
 ---
 
-## 多文件配置
+# 多文件配置
 
 自版本 `4.23.0` 起，V2Ray 程序支持使用多个配置文件。
 
@@ -193,16 +193,17 @@ v2ctl> [ outbound.json ] updated outbound with tag:  proxy
 ```
 
 ```plain
-00_log.json
-01_api.json
-02_dns.json
-03_routing.json
-04_policy.json
-05_inbounds.json
-06_outbounds.json
-07_transport.json
-08_stats.json
-09_reverse.json
+.
+├── 00_log.json
+├── 01_api.json
+├── 02_dns.json
+├── 03_routing.json
+├── 04_policy.json
+├── 05_inbounds.json
+├── 06_outbounds.json
+├── 07_transport.json
+├── 08_stats.json
+└── 09_reverse.json
 
 0 directories, 10 files
 ```
