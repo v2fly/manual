@@ -24,29 +24,29 @@ refen: configuration/transport
 }
 ```
 
-> `tcpSettings`: TcpObject
+> `tcpSettings`: [TcpObject](transport/tcp.md)
 
-针对 [TCP 连接的配置](transport/tcp.md)。
+针对 TCP 连接的配置。
 
-> `kcpSettings`: KcpObject
+> `kcpSettings`: [KcpObject](transport/mkcp.md)
 
-针对 [mKCP 连接的配置](transport/mkcp.md)。
+针对 mKCP 连接的配置。
 
-> `wsSettings`: WebSocketObject
+> `wsSettings`: [WebSocketObject](transport/websocket.md)
 
-针对 [WebSocket 连接的配置](transport/websocket.md)。
+针对 WebSocket 连接的配置。
 
-> `httpSettings`: HttpObject
+> `httpSettings`: [HttpObject](transport/h2.md)
 
-针对 [HTTP/2 连接的配置](transport/h2.md)。
+针对 HTTP/2 连接的配置。
 
-> `dsSettings`: DomainSocketObject
+> `dsSettings`: [DomainSocketObject](transport/domainsocket.md)
 
-针于 [Domain Socket 连接的配置](transport/domainsocket.md)。
+针对 Domain Socket 连接的配置。
 
-> `quicSettings`: QUICObject
+> `quicSettings`: [QUICObject](transport/quic.md)
 
-（V2Ray 4.7+）针于 [QUIC 连接的配置](transport/quic.md)。
+针对 QUIC 连接的配置。
 
 ## StreamSettingsObject
 
@@ -87,29 +87,29 @@ TLS 配置。TLS 由 Golang 提供，支持 TLS 1.3，不支持 DTLS。
 
 当前连接的 TCP 配置，仅当此连接使用 TCP 时有效。配置内容与上面的全局配置相同。
 
-> `kcpSettings`: KcpObject
+> `kcpSettings`: [KcpObject](transport/mkcp.md)
 
 当前连接的 mKCP 配置，仅当此连接使用 mKCP 时有效。配置内容与上面的全局配置相同。
 
-> `wsSettings`: WebSocketObject
+> `wsSettings`: [WebSocketObject](transport/websocket.md)
 
 当前连接的 WebSocket 配置，仅当此连接使用 WebSocket 时有效。配置内容与上面的全局配置相同。
 
-> `httpSettings`: HttpObject
+> `httpSettings`: [HttpObject](transport/h2.md)
 
 当前连接的 HTTP/2 配置，仅当此连接使用 HTTP/2 时有效。配置内容与上面的全局配置相同。
 
-> `dsSettings`: DomainSocketObject
+> `dsSettings`: [DomainSocketObject](transport/domainsocket.md)
 
 当前连接的 Domain socket 配置，仅当此连接使用 Domain socket 时有效。配置内容与上面的全局配置相同。
 
-> `quicSettings`: QUICObject
+> `quicSettings`: [QUICObject](transport/quic.md)
 
-(V2Ray 4.7+) 当前连接的 QUIC 配置，仅当此连接使用 QUIC 时有效。配置内容与上面的全局配置相同。
+当前连接的 QUIC 配置，仅当此连接使用 QUIC 时有效。配置内容与上面的全局配置相同。
 
-> `sockopt`: SockoptObject
+> `sockopt`: [SockoptObject](#sockoptobject)
 
-连接选项
+用作透明代理的配置。
 
 ### TLSObject
 
