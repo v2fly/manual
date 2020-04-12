@@ -14,7 +14,7 @@ refcn: chapter_02/multiple_config
 启动信息中会提示依次读入的每个配置文件，留意启动信息是否符合你预设的顺序。
 {% endhint %}
 
-```plain
+```shell
 $ v2ray -c v2ray.json -c 00_base.json -c 01_info.json -c 02_log.json -c outbound.json
 V2Ray v4.23.0-version (user) 20200311-000000 (go1.13.8 linux/mipsle)
 A unified platform for anti-censorship.

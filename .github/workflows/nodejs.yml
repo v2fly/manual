@@ -21,6 +21,7 @@ jobs:
       run: |
         echo '{' > .lintmdrc
         echo '    "rules": {' >> .lintmdrc
+        echo '        "no-empty-code-lang": 0,' >> .lintmdrc
         echo '        "no-long-code": 0' >> .lintmdrc
         echo '    }' >> .lintmdrc
         echo '}' >> .lintmdrc
