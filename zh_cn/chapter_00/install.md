@@ -88,6 +88,17 @@ V2Ray 提供两种验证方式：
     # bash <(curl https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
     ```
 
+请将 Log 修改至 `/var/log/v2ray/` 文件夹下：
+
+```json
+{
+    "log": {
+        "access": "/var/log/v2ray/access.log",
+        "error": "/var/log/v2ray/error.log"
+    }
+}
+```
+
 如果你需要 V2Ray 直接使用证书文件：
 
 假设证书文件的所在路径为 `/srv/http/`，文件分别为 `/srv/http/example.com.key` 和 `/srv/http/example.com.pem`。
