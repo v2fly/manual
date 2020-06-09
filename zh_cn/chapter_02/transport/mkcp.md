@@ -20,7 +20,8 @@ mKCP 使用 UDP 来模拟 TCP 连接，请确定主机上的防火墙配置正�
     "writeBufferSize": 1,
     "header": {
         "type": "none"
-    }
+    },
+    "seed": "Password"
 }
 ```
 
@@ -61,6 +62,10 @@ mKCP 使用 UDP 来模拟 TCP 连接，请确定主机上的防火墙配置正�
 {% endhint %}
 
 > `header`: [HeaderObject](#headerobject)
+
+> `seed`: string
+
+可选项混淆密码， v4.24 后加入。可以使用 AES-128-GCM 算法混淆流量数据，客户端和服务器端需要保持一致。此设置可能可以对抗部分封锁。本混淆机制不能用于保证通信内容的安全。在开发者测试环境下开启此设置后没有出现原版未混淆版本的封端口状况。
 
 数据包头部伪装设置
 
