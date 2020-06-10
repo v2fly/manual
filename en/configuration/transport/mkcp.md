@@ -62,6 +62,10 @@ Write buffer size for a single connection, in MB. Default value is `2`.
 
 Configuration for packet header obfuscation.
 
+> `seed`: string
+
+An optional obfuscation setting available since v4.24. You can set this value to obfuscate your traffic using AES-128-GCM. The setting on the Client and Server should match each other. This setting may be able to resist some censorship, but should not be relied on for confidentiality of traffic. In the developer's setting, this can prevent the IP-Port GFW block in the case of triggered by traffics without this setting.
+
 ### HeaderObject
 
 ```javascript

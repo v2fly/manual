@@ -97,6 +97,15 @@ Use `"auto"` wherever possible for better compatibility.
 
 {% endhint %}
 
+> `testsEnabled`: "VMessAEAD" | "none"
+
+Enable an ongoing experiment.（ v4.24 +）
+
+* `"VMessAEAD"`： Enable VMessAEAD Header Encryption experiment（more on that later）。 （ v4.24 +）
+
+* `"none"`：Don't enable any experiment.
+
+
 ## InboundConfigurationObject
 
 ```javascript
@@ -194,3 +203,20 @@ User level.
 > `alterId`: number
 
 Number of alternative IDs. Default value 64. Recommend 4.
+
+
+### VMess MD5 Authorization Data taint mechanic
+
+To further deter attack and detection, From v4.24, every MD5 authorization data will starts with an unblemished state, whenever an attack is detected or the checksum is invalid, the authorization data associated with that connection will be tainted. Tainted authorization data cannot be used for establish new connections, whenever an attacker tries to establish with a tainted authorization data, the server will generate an error containing "invalid user" "ErrTainted", and stop that connection from further processing.
+
+When the server is not under attack, this mechanic does not affect a well-behaved client. If the server is under an attack, connections may become unstable.  It is possible for attackers with UUID information of server to launch a DoS attack based on this mechanic, servers under this kind of attack can disengage this protection by change proxy/vmess/validator.go file's func (v *TimedUserValidator) BurnTaintFuse(userHash []byte) error function atomic.CompareAndSwapUint32(pair.taintedFuse, 0, 1) instruction to atomic.CompareAndSwapUint32(pair.taintedFuse, 0, 0). Clients using VMessAEAD Authorization mechanic is not affected by VMess MD5 Authorization Data taint mechanic.
+
+### VMessAEAD Header Encryption Experiment （Public testing phrase）
+
+VMessAEAD is a minor change of  VMess aiming to defend against Replay attack since v4.24 it can be enabled by testsEnabled settings. During public testing, the inbounds and the outbounds need to be the same version. Since v4.24 all inbounds enable this experiment by default. Clients enabled this test can not connect to incompatible servers.
+
+When estlibishing VMess connections, outbounds with this experiment will output "=======VMESSAEADEXPERIMENT ENABLED========" to stdout. This experiment can be set to forced on with environment varible "VMESSAEADEXPERIMENT=y" , "VMESSAEADEXPERIMENT=n"  for forced off.
+
+Please report any issue you come across in the experiment。 
+
+VMessAEAD Header Encryption will be enabled by default after public testing ended. After that, the inbound will by default compatible with MD5 Authorization Data for a limited amount of time.
