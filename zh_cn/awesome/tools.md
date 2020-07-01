@@ -43,6 +43,12 @@ Mellow 是一个基于规则的全局透明代理工具，可以运行在 Window
 
 Download: [Github](https://github.com/mellow-io/mellow)
 
+> Trojan-Qt5 <img width="20" src="/resources/win.svg"> <img width="20" src="/resources/apple.svg"> <img width="20" src="/resources/linux.svg">
+
+Trojan-Qt5 是一个可以在 Windows、macOS 和 Linux 上运行的 V2Ray 图形化客户端。它由 C++、Golang 和 Qt5 开发而成。Trojan-Qt5 支持 Socks5、HTTP、Shadowsocks、ShadowsocksR、VMess、Trojan、Snell 等各种常见代理协议。Trojan-Qt5 不需要安装 V2Ray-Core 也不需要放置 geoip/site.dat 文件，完全内置集成。核心可升级更换，geo 文件同样如此。
+
+Github项目地址: [Github](https://github.com/Trojan-Qt5/Trojan-Qt5)
+
 > Kitsunebi <img width="20" src="/resources/ios.svg"> <img width="20" src="/resources/android.svg">
 
 Kitsunebi 是一个基于 V2Ray 核心的移动平台应用（iOS 和 Android）。它可以创建基于 VMess 或者 Shadowsocks 的 VPN 连接。Kitsunebi 支持导入和导出与 V2Ray 兼容的 JSON 配置。
