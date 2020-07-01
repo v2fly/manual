@@ -45,7 +45,7 @@ Download: [Github](https://github.com/mellow-io/mellow)
 
 > Trojan-Qt5 <img width="20" src="/resources/win.svg"> <img width="20" src="/resources/apple.svg"> <img width="20" src="/resources/linux.svg">
 
-Trojan-Qt5 是一个可以运行在 Windows、macOS 和 Linux 上运行的V2Ray图形化客户端。它由C++、Golang和Qt5开发而成。Trojan-Qt5 支持 Socks5、HTTP、Shadowsocks、ShadowsocksR、VMess、Trojan、Snell等各种常见代理协议。Trojan-Qt5 不需要安装V2Ray-Core也不需要放置geoip/site.dat，完全内置集成。核心可升级更换，geo文件同样如此。
+Trojan-Qt5 是一个可以在 Windows、macOS 和 Linux 上运行的 V2Ray 图形化客户端。它由 C++、Golang 和 Qt5 开发而成。Trojan-Qt5 支持 Socks5、HTTP、Shadowsocks、ShadowsocksR、VMess、Trojan、Snell 等各种常见代理协议。Trojan-Qt5 不需要安装 V2Ray-Core 也不需要放置 geoip/site.dat 文件，完全内置集成。核心可升级更换，geo 文件同样如此。
 
 Github项目地址: [Github](https://github.com/Trojan-Qt5/Trojan-Qt5)
 
