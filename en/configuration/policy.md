@@ -25,7 +25,9 @@ Local policy manages policy settings of current V2Ray instance, such as connecti
   },
   "system": {
     "statsInboundUplink": false,
-    "statsInboundDownlink": false
+    "statsInboundDownlink": false,
+    "statsOutboundUplink": false,
+    "statsOutboundDownlink": false
   }
 }
 ```
@@ -114,7 +116,9 @@ Default value (V2Ray 4.3-):
 ```javascript
 {
   "statsInboundUplink": false,
-  "statsInboundDownlink": false
+  "statsInboundDownlink": false,
+  "statsOutboundUplink": false,
+  "statsOutboundDownlink": false
 }
 ```
 
@@ -125,3 +129,11 @@ When set to `true`, V2Ray enables stat counter for all uplink traffic in all inb
 > `statsInboundDownlink`: true | false
 
 When set to `true`, V2Ray enables stat counter for all downlink traffic in all inbound proxies.
+
+> `statsOutboundUplink`: true | false
+
+(V2Ray 4.25.2+) When set to `true`, V2Ray enables stat counter for all uplink traffic in all outbound proxies.
+
+> `statsOutboundDownlink`: true | false
+
+(V2Ray 4.25.2+) When set to `true`, V2Ray enables stat counter for all downlink traffic in all outbound proxies.
