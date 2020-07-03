@@ -26,7 +26,9 @@ refen: configuration/policy
     },
     "system": {
         "statsInboundUplink": false,
-        "statsInboundDownlink": false
+        "statsInboundDownlink": false,
+        "statsOutboundUplink": false,
+        "statsOutboundDownlink": false
     }
 }
 ```
@@ -109,7 +111,9 @@ V2Ray 系统的策略
 ```json
 {
     "statsInboundUplink": false,
-    "statsInboundDownlink": false
+    "statsInboundDownlink": false,
+    "statsOutboundUplink": false,
+    "statsOutboundDownlink": false
 }
 ```
 
@@ -120,3 +124,11 @@ V2Ray 系统的策略
 > `statsInboundDownlink`: true | false
 
 当值为 `true` 时，开启所有入站代理的下行流量统计。
+
+> `statsOutboundUplink`: true | false
+
+（V2Ray 4.25.2+）当值为 `true` 时，开启所有出站代理的上行流量统计。
+
+> `statsOutboundDownlink`: true | false
+
+（V2Ray 4.25.2+）当值为 `true` 时，开启所有出站代理的下行流量统计。
