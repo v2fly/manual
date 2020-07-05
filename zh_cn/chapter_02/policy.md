@@ -131,4 +131,4 @@ V2Ray 系统的策略
 
 > `statsOutboundDownlink`: true | false
 
-（V2Ray 4.26.0当值为 `true` 时，开启所有出站代理的下行流量统计。
+（V2Ray 4.26.0+） 当值为 `true` 时，开启所有出站代理的下行流量统计。
