@@ -132,8 +132,8 @@ When set to `true`, V2Ray enables stat counter for all downlink traffic in all i
 
 > `statsOutboundUplink`: true | false
 
-(V2Ray 4.25.2+) When set to `true`, V2Ray enables stat counter for all uplink traffic in all outbound proxies.
+(V2Ray 4.26.0+) When set to `true`, V2Ray enables stat counter for all uplink traffic in all outbound proxies.
 
 > `statsOutboundDownlink`: true | false
 
-(V2Ray 4.25.2+) When set to `true`, V2Ray enables stat counter for all downlink traffic in all outbound proxies.
+(V2Ray 4.26.0+) When set to `true`, V2Ray enables stat counter for all downlink traffic in all outbound proxies.
