@@ -43,3 +43,11 @@ V2Ray 提供了一些关于其运行状况的统计信息。
 > `inbound>>>[tag]>>>traffic>>>downlink`
 
 特定入站代理的下行流量，单位字节。
+
+> `outbound>>>[tag]>>>traffic>>>uplink`
+
+（V2Ray 4.25.2+）特定出站代理的上行流量，单位字节。
+
+> `outbound>>>[tag]>>>traffic>>>downlink`
+
+（V2Ray 4.25.2+）特定出站代理的下行流量，单位字节。
