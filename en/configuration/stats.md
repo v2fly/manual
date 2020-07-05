@@ -44,8 +44,8 @@ Accumulated downlink traffic of specific inbound, in bytes.
 
 > `outbound>>>[tag]>>>traffic>>>uplink`
 
-(V2Ray 4.25.2+) Accumulated uplink traffic of specific outbound, in bytes.
+(V2Ray 4.26.0+) Accumulated uplink traffic of specific outbound, in bytes.
 
 > `outbound>>>[tag]>>>traffic>>>downlink`
 
-(V2Ray 4.25.2+) Accumulated downlink traffic of specific outbound, in bytes.
+(V2Ray 4.26.0+) Accumulated downlink traffic of specific outbound, in bytes.
