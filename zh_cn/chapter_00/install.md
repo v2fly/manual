@@ -46,7 +46,7 @@ V2Ray 提供两种验证方式：
 
 ## Linux 安装脚本 {#linuxscript}
 
-原安装脚本将在 07-01 后被弃置，由 [fhs-install-v2ray](https://github.com/v2fly/fhs-install-v2ray) 替换。
+原安装脚本已被弃置，由 [fhs-install-v2ray](https://github.com/v2fly/fhs-install-v2ray) 替换。
 
 相关讨论可前往 [#2328](https://github.com/v2ray/v2ray-core/issues/2328)。
 
@@ -142,6 +142,8 @@ uid=65534(nobody) gid=65534(nobody) groups=65534(nobody)
 ```
 
 ---
+
+原 go.sh 不再推薦使用。
 
 V2Ray 提供了一个在 Linux 中的自动化安装脚本。这个脚本会自动检测有没有安装过 V2Ray，如果没有，则进行完整的安装和配置；如果之前安装过 V2Ray，则只更新 V2Ray 二进制程序而不更新配置。
 
