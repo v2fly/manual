@@ -91,7 +91,7 @@ bazel 构建工具主要是发布团队使用。
 
 ```bash
 cd $GOPATH/src/v2ray.com/core
-bazel build --action_env=GOPATH=$GOPATH --action_env=PATH=$PATH //release:v2ray_linux_amd64_package
+bazel build --action_env=PATH=$PATH --action_env=SPWD=$PWD --action_env=GOPATH=$(go env GOPATH) --action_env=GOCACHE=$(go env GOCACHE) --spawn_strategy local //release:v2ray_linux_amd64_package
 #Output: bazel-bin/release/v2ray-linux-64.zip
 ```
 
@@ -99,7 +99,7 @@ bazel build --action_env=GOPATH=$GOPATH --action_env=PATH=$PATH //release:v2ray_
 
 ```bash
 cd $GOPATH/src/v2ray.com/core
-bazel build --action_env=GOPATH=$GOPATH --action_env=PATH=$PATH //release:all
+bazel build --action_env=PATH=$PATH --action_env=SPWD=$PWD --action_env=GOPATH=$(go env GOPATH) --action_env=GOCACHE=$(go env GOCACHE) --spawn_strategy local //release:all
 ```
 
 ## 安装构建完成的安装包 {#install}
@@ -119,7 +119,7 @@ $GOPATH/src/v2ray.com/core/release/install-release.sh --local <path/to/zip/file>
 
 ```bash
 cd $GOPATH/src/v2ray.com/core
-bazel build --action_env=GOPATH=$GOPATH --action_env=PATH=$PATH //release:v2ray_linux_amd64_package
+bazel build --action_env=PATH=$PATH --action_env=SPWD=$PWD --action_env=GOPATH=$(go env GOPATH) --action_env=GOCACHE=$(go env GOCACHE) --spawn_strategy local //release:v2ray_linux_amd64_package
 ```
 
 5. 然后可以解压安装包并重新打包: `unzip bazel-bin/release/v2ray-linux-64.zip`
