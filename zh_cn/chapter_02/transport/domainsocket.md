@@ -19,10 +19,15 @@ Domain Socket 使用标准的 Unix domain socket 来传输数据。它的优势�
 
 ```json
 {
-    "path": "/path/to/ds/file"
+    "path": "/path/to/ds/file",
+    "abstract": false
 }
 ```
 
 > `path`: string
 
 一个合法的文件路径。在运行 V2Ray 之前，这个文件必须不存在。
+
+> `abstract`: true | false
+
+是否为 abstract domain socket，默认 `false`。
