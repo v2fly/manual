@@ -206,7 +206,7 @@ VMess 的用户 ID。必须是一个合法的 UUID。
 
 > `alterId`: number
 
-和`ClientObject`中的`alterId`相同，默认值为`64`。推荐值`4`。
+动态端口的默认`alterId`，默认值为`32`，填`0`也会被改写成`32`。推荐值`4`。
 
 ### VMess MD5 认证信息 玷污机制
 
