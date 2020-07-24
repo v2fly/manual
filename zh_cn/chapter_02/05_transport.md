@@ -118,6 +118,7 @@ TLS 配置。TLS 由 Golang 提供，支持 TLS 1.3，不支持 DTLS。
     "serverName": "v2ray.com",
     "allowInsecure": false,
     "alpn": [
+        "h2",
         "http/1.1"
     ],
     "certificates": [],
@@ -131,7 +132,7 @@ TLS 配置。TLS 由 Golang 提供，支持 TLS 1.3，不支持 DTLS。
 
 > `alpn`: \[ string \]
 
-一个字符串数组，指定了 TLS 握手时指定的 ALPN 数值。默认值为 `["http/1.1"]`。
+一个字符串数组，指定了 TLS 握手时指定的 ALPN 数值。默认值为 `["h2", "http/1.1"]`。
 
 > `allowInsecure`: true | false
 
