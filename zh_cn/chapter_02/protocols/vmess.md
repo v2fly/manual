@@ -16,22 +16,22 @@ VMess 的配置分为两部分，`InboundConfigurationObject`和`OutboundConfigu
 
 ## OutboundConfigurationObject
 
-```javascript
+```json
 {
-  "vnext": [
-    {
-      "address": "127.0.0.1",
-      "port": 37192,
-      "users": [
+    "vnext": [
         {
-          "id": "27848739-7e62-4138-9fd3-098a63964b6b",
-          "alterId": 4,
-          "security": "auto",
-          "level": 0
+            "address": "127.0.0.1",
+            "port": 37192,
+            "users": [
+                {
+                    "id": "27848739-7e62-4138-9fd3-098a63964b6b",
+                    "alterId": 4,
+                    "security": "auto",
+                    "level": 0
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
 ```
 
@@ -41,11 +41,11 @@ VMess 的配置分为两部分，`InboundConfigurationObject`和`OutboundConfigu
 
 ### ServerObject
 
-```javascript
+```json
 {
-  "address": "127.0.0.1",
-  "port": 37192,
-  "users": []
+    "address": "127.0.0.1",
+    "port": 37192,
+    "users": []
 }
 ```
 
@@ -63,12 +63,12 @@ VMess 的配置分为两部分，`InboundConfigurationObject`和`OutboundConfigu
 
 ### UserObject
 
-```javascript
+```json
 {
-  "id": "27848739-7e62-4138-9fd3-098a63964b6b",
-  "alterId": 4,
-  "security": "auto",
-  "level": 0
+    "id": "27848739-7e62-4138-9fd3-098a63964b6b",
+    "alterId": 4,
+    "security": "auto",
+    "level": 0
 }
 ```
 
@@ -108,24 +108,24 @@ VMess 用户的主 ID。必须是一个合法的 UUID。
 
 ## InboundConfigurationObject
 
-```javascript
+```json
 {
-  "clients": [
-    {
-      "id": "27848739-7e62-4138-9fd3-098a63964b6b",
-      "level": 0,
-      "alterId": 4,
-      "email": "love@v2ray.com"
-    }
-  ],
-  "default": {
-    "level": 0,
-    "alterId": 4
-  },
-  "detour": {
-    "to": "tag_to_detour"
-  },
-  "disableInsecureEncryption": false
+    "clients": [
+        {
+            "id": "27848739-7e62-4138-9fd3-098a63964b6b",
+            "level": 0,
+            "alterId": 4,
+            "email": "love@v2ray.com"
+        }
+    ],
+    "default": {
+        "level": 0,
+        "alterId": 4
+    },
+    "detour": {
+        "to": "tag_to_detour"
+    },
+    "disableInsecureEncryption": false
 }
 ```
 
@@ -150,12 +150,12 @@ VMess 用户的主 ID。必须是一个合法的 UUID。
 
 ### ClientObject
 
-```javascript
+```json
 {
-  "id": "27848739-7e62-4138-9fd3-098a63964b6b",
-  "level": 0,
-  "alterId": 4,
-  "email": "love@v2ray.com"
+    "id": "27848739-7e62-4138-9fd3-098a63964b6b",
+    "level": 0,
+    "alterId": 4,
+    "email": "love@v2ray.com"
 }
 ```
 
@@ -181,9 +181,9 @@ VMess 的用户 ID。必须是一个合法的 UUID。
 
 ### DetourObject
 
-```javascript
+```json
 {
-  "to": "tag_to_detour"
+    "to": "tag_to_detour"
 }
 ```
 
@@ -193,10 +193,10 @@ VMess 的用户 ID。必须是一个合法的 UUID。
 
 ### DefaultObject
 
-```javascript
+```json
 {
-  "level": 0,
-  "alterId": 4
+    "level": 0,
+    "alterId": 4
 }
 ```
 
