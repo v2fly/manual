@@ -14,9 +14,9 @@ Freedom 是一个出站协议，可以用来向任意网络发送（正常的）
 
 ```json
 {
-  "domainStrategy": "AsIs",
-  "redirect": "127.0.0.1:3366",
-  "userLevel": 0
+    "domainStrategy": "AsIs",
+    "redirect": "127.0.0.1:3366",
+    "userLevel": 0
 }
 ```
 
