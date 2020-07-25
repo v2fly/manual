@@ -1,7 +1,6 @@
 # Summary
 
 * [Project V](README.md) 
-  * [버전 기록](welcome/versions.md)
   * [워크 플로](welcome/workflow.md)
   * [설치](welcome/install.md)
   * [빠른 시작](welcome/start.md)

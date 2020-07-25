@@ -1,7 +1,6 @@
 # Summary
 
 * [Project V](README.md) 
-  * [Lịch sử phiên bản](welcome/versions.md)
   * [Quy trình làm việc](welcome/workflow.md)
   * [cài đặt, dựng lên](welcome/install.md)
   * [Bắt đầu nhanh](welcome/start.md)

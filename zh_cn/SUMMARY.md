@@ -1,7 +1,6 @@
 # Summary
 
 * [Project V](README.md)
-    * [版本历史](chapter_00/01_versions.md)
     * [使用方式](chapter_00/workflow.md)
     * [下载安装](chapter_00/install.md)
     * [新手上路](chapter_00/start.md)

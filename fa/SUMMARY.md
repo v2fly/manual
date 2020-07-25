@@ -1,7 +1,6 @@
 # Summary
 
 * [Project V](README.md) 
-  * [تاریخچه نسخه](welcome/versions.md)
   * [گردش کار](welcome/workflow.md)
   * [نصب](welcome/install.md)
   * [شروع سریع](welcome/start.md)

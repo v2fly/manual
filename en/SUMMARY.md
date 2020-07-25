@@ -1,7 +1,6 @@
 # Summary
 
 * [Project V](README.md)
-  * [Version History](welcome/versions.md)
   * [Workflow](welcome/workflow.md)
   * [Install](welcome/install.md)
   * [Quick Start](welcome/start.md)

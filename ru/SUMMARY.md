@@ -1,7 +1,6 @@
 # Краткое описание
 
 * [Project V](README.md) 
-  * [История версий](welcome/versions.md)
   * [Принцип работы](welcome/workflow.md)
   * [Установка](welcome/install.md)
   * [Быстрый старт](welcome/start.md)
