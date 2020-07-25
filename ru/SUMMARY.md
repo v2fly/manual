@@ -8,7 +8,6 @@
   * [Пожертвование](welcome/donate.md)
   * [Поддержка](welcome/help.md)
   * [ЧаВо](welcome/faq.md)
-  * [&#8618; Блог](https://steemit.com/@v2ray)
 * [Настройка](configuration/README.md) 
   * [Обзор](configuration/overview.md)
   * [Протоколы](configuration/protocols.md) 

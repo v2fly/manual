@@ -8,7 +8,6 @@
   * [کمک مالی](welcome/donate.md)
   * [حمایت کردن](welcome/help.md)
   * [سوالات متداول](welcome/faq.md)
-  * [وبلاگ&#8618;](https://steemit.com/@v2ray)
 * [پیکربندی](configuration/README.md) 
   * [بررسی اجمالی](configuration/overview.md)
   * [پروتکل ها](configuration/protocols.md) 

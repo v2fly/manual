@@ -8,7 +8,6 @@
   * [기부](welcome/donate.md)
   * [지원하다](welcome/help.md)
   * [자주하는 질문](welcome/faq.md)
-  * [블로그&#8618;](https://steemit.com/@v2ray)
 * [구성](configuration/README.md) 
   * [개요](configuration/overview.md)
   * [프로토콜](configuration/protocols.md) 

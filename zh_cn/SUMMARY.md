@@ -8,7 +8,6 @@
     * [捐助支持](chapter_00/02_donate.md)
     * [寻求帮助](chapter_00/help.md)
     * [常见问题](chapter_00/faq.md)
-    * [博客&#8618;](https://steemit.com/@v2ray)
     * [新白话文教程（社区版）&#8618;](https://guide.v2fly.org/)
 * [配置文件](chapter_02/README.md)
     * [配置文件格式](chapter_02/01_overview.md)

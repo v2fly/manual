@@ -8,7 +8,6 @@
   * [Quyên góp](welcome/donate.md)
   * [Ủng hộ](welcome/help.md)
   * [Câu hỏi thường gặp](welcome/faq.md)
-  * [Blog&#8618;](https://steemit.com/@v2ray)
 * [Cấu hình](configuration/README.md) 
   * [Tổng quan](configuration/overview.md)
   * [Giao thức](configuration/protocols.md) 
